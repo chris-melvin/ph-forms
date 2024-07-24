@@ -39,6 +39,7 @@ function StackedBoxInput({
   style = {},
   debug,
   boxWidth,
+  boxHeight,
   isBordered,
   labelStyle,
   lowerTextFontSize,
@@ -50,6 +51,7 @@ function StackedBoxInput({
         style={{
           ...styles.container,
           width: boxWidth,
+          height: boxHeight,
           ...(isBordered ? styles.borderedContainer : {}),
         }}
       >

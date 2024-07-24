@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
   },
   square: {
     marginRight: 5,
-    borderTopWidth: 0.7,
-    borderBottomWidth: 0.7,
-    borderLeftWidth: 0.7,
-    borderRightWidth: 0.7,
-    borderColor: "#000",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderColor: "#00000",
   },
   smLabel: {
     alignSelf: "center",

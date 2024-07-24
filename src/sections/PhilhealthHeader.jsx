@@ -6,8 +6,9 @@ import logo from "../../shared/components/document/ClaimForm/logo/philhealth_log
 export const PhilhealthHeader = () => {
   const styles = StyleSheet.create({
     logo: {
-      width: "2.41in",
+      width: "2.39in",
       height: "1in",
+      marginLeft: ".02in",
       paddingVertical: ".10in",
     },
     text: {
@@ -17,8 +18,8 @@ export const PhilhealthHeader = () => {
     reminder: {
       fontWeight: 700,
       fontSize: "8.04px",
-      marginBottom: ".18in",
-      marginRight: ".06in",
+      marginBottom: ".14in",
+      marginRight: ".03in",
       fontFamily: "Arial",
       lineHeight: "1.2",
     },
@@ -32,7 +33,7 @@ export const PhilhealthHeader = () => {
       fontFamily: "Arial",
       lineHeight: ".8",
       fontWeight: 400,
-      marginBottom: ".20in",
+      marginBottom: ".18in",
     },
   });
   return (
@@ -40,7 +41,7 @@ export const PhilhealthHeader = () => {
       style={{
         width: "100%",
         justifyContent: "space-between",
-        marginBottom: ".63in",
+        marginBottom: ".6in",
       }}
     >
       <Column>
@@ -61,9 +62,9 @@ export const PhilhealthHeader = () => {
             <Text
               style={{
                 fontSize: "8.76px",
-                maringTop: ".15in",
+                maringTop: ".1in",
                 lineHeight: "1.2",
-                marginBottom: ".03in",
+                marginBottom: ".01in",
               }}
             >
               (Claim Form)

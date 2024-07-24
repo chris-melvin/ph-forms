@@ -57,7 +57,11 @@ export const DeliveryOutcome = () => {
           </Text>
         </View>
         <View style={{ marginRight: ".3in" }}>
-          <SegmentedDate label="Date" style={{ paddingTop: 0 }} />
+          <SegmentedDate
+            fontSize="6.24px"
+            label="Date"
+            style={{ paddingTop: 0 }}
+          />
         </View>
         <Row style={{ alignItems: "flex-start" }}>
           <Text
@@ -105,12 +109,10 @@ export const DeliveryOutcome = () => {
             <Text style={{ color: "#f00" }}>9.</Text> Maternal Outcome
           </Text>
         </View>
-        <Row>
+        <Row style={{ marginTop: ".1in" }}>
           <View
             style={{
               marginRight: ".03in",
-              display: "flex",
-              flexDirection: "row",
             }}
           >
             <StackedBoxInput
@@ -119,11 +121,13 @@ export const DeliveryOutcome = () => {
               boxWidth=".66in"
               lowerTextFontSize="6.24px"
             />
-            {/* TODO: FIX ALIGNMENT */}
+          </View>
+          <View>
             <Text
               style={{
                 fontSize: "8.64px",
                 fontFamily: "Arial Narrow",
+                transform: "translate( 0, -5)", //
               }}
             >
               Pregnancy Uterine,
@@ -171,7 +175,7 @@ export const DeliveryOutcome = () => {
             <Text style={{ color: "#f00" }}>10.</Text> Birth Outcome
           </Text>
         </View>
-        <Row>
+        <Row style={{ marginTop: ".1in" }}>
           <View style={{ marginRight: ".12in" }}>
             <StackedBoxInput
               upperText=""
@@ -217,7 +221,11 @@ export const DeliveryOutcome = () => {
           </Text>
         </View>
         <View style={{ marginRight: ".3in" }}>
-          <SegmentedDate boxWidth=".12in" style={{ paddingTop: 0 }} />
+          <SegmentedDate
+            fontSize="6.24px"
+            boxWidth=".12in"
+            style={{ paddingTop: 0 }}
+          />
         </View>
       </Row>
       {/* 12 */}
@@ -236,7 +244,11 @@ export const DeliveryOutcome = () => {
           </Text>
         </View>
         <View style={{ marginRight: ".3in" }}>
-          <SegmentedDate boxWidth=".12in" style={{ paddingTop: 0 }} />
+          <SegmentedDate
+            fontSize="6.24px"
+            boxWidth=".12in"
+            style={{ paddingTop: 0 }}
+          />
         </View>
         <Row style={{ alignItems: "flex-start" }}>
           <Text

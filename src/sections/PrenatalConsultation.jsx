@@ -63,7 +63,7 @@ export const PrenatalConsultation = () => {
       </View>
       <Row
         style={{
-          marginVertical: ".1in",
+          marginTop: ".1in",
           paddingLeft: ".25in",
           paddingRight: ".1in",
           ...styles.text,
@@ -92,7 +92,11 @@ export const PrenatalConsultation = () => {
                 </Text>
               </View>
               <View>
-                <CheckBoxInput />
+                <CheckBoxInput
+                  isSmall={false}
+                  customHeight=".16in"
+                  customWidth=".12in"
+                />
               </View>
             </View>
             <View style={[styles.flexRowSpaceBetween]}>
@@ -103,7 +107,11 @@ export const PrenatalConsultation = () => {
                 </Text>
               </View>
               <View>
-                <CheckBoxInput />
+                <CheckBoxInput
+                  isSmall={false}
+                  customHeight=".16in"
+                  customWidth=".12in"
+                />
               </View>
             </View>
           </Column>
@@ -122,11 +130,15 @@ export const PrenatalConsultation = () => {
                   style={{ paddingTop: 0 }}
                   fontSize="6.24px"
                   boxWidth=".12in"
+                  labelMarginTop=".02in"
                 />
                 <View>
                   <TextInput
                     label="Age of Menarche"
-                    labelStyle={{ marginRight: ".1in" }}
+                    labelStyle={{
+                      marginLeft: ".1in",
+                      fontFamily: "Arial Narrow",
+                    }}
                     width=".50in"
                   />
                 </View>
@@ -141,7 +153,10 @@ export const PrenatalConsultation = () => {
             >
               <View>
                 <Text style={{ marginRight: ".2in" }}>
-                  <Text style={{ color: "#f00" }}>d.</Text> Obstetric History
+                  <Text style={{ color: "#f00", fontFamily: "Arial Narrow" }}>
+                    d.
+                  </Text>{" "}
+                  Obstetric History
                 </Text>
               </View>
               <View style={{ marginRight: ".15in" }}>
@@ -200,7 +215,7 @@ export const PrenatalConsultation = () => {
         style={{
           paddingLeft: ".25in",
           paddingRight: ".1in",
-          marginBottom: ".1in",
+          marginBottom: ".07in",
           ...styles.text,
         }}
       >
@@ -222,7 +237,7 @@ export const PrenatalConsultation = () => {
             "b.  Ovarian cyst",
             "c.  Myoma uteri",
           ]}
-          width="1.31in"
+          width="1.22in"
           marginRight=".30in"
         />
 
@@ -270,7 +285,7 @@ export const PrenatalConsultation = () => {
       >
         <LabeledCheckboxList
           array={["a.  Hypertension", "b.  Heart Disease", "c.  Diabetes"]}
-          width="1.31in"
+          width="1.22in"
           marginRight=".30in"
         />
 
@@ -356,16 +371,16 @@ export const PrenatalConsultation = () => {
         <View style={{ marginRight: ".05in" }}>
           <CheckBoxInput
             isSmall={false}
-            customHeight=".16in"
-            customWidth=".12in"
+            customHeight=".18in"
+            customWidth=".15in"
           />
           <Text style={{ fontStyle: "italic", fontSize: "7.8px" }}>yes</Text>
         </View>
         <View>
           <CheckBoxInput
             isSmall={false}
-            customHeight=".16in"
-            customWidth=".12in"
+            customHeight=".18in"
+            customWidth=".15in"
           />
           <Text>no</Text>
         </View>
@@ -379,6 +394,7 @@ export const PrenatalConsultation = () => {
             style={{ paddingTop: 0 }}
             fontSize="6.24px"
             boxWidth=".12in"
+            labelMarginTop=".01in"
           />
         </View>
       </Row>
@@ -419,7 +435,7 @@ export const PrenatalConsultation = () => {
             <View
               key={item}
               style={{
-                borderWidth: 0.7,
+                borderWidth: 1,
                 height: ".165in",
                 width: ".32in",
                 paddingTop: ".01in",
@@ -496,7 +512,7 @@ export const PrenatalConsultation = () => {
               key={item}
               style={{
                 height: ".17in",
-                borderWidth: 0.7,
+                borderWidth: 1,
                 width: ".415in",
                 marginLeft: ".12in",
               }}
@@ -554,7 +570,7 @@ export const PrenatalConsultation = () => {
                   key={item}
                   style={{
                     height: ".17in",
-                    borderWidth: 0.7,
+                    borderWidth: 1,
                     width: ".415in",
                     marginLeft: ".12in",
                   }}

@@ -3,9 +3,9 @@ import React from "react";
 const styles = StyleSheet.create({
   square: {
     height: 6,
-    borderBottomWidth: 0.7,
+    borderBottomWidth: 0.8,
     borderLeftWidth: 0,
-    borderRightWidth: 0.7,
+    borderRightWidth: 0.8,
     borderColor: "#000",
     boxSizing: "border-box",
   },
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   },
   squaresContainer: {
     height: ".18in",
-    borderLeftWidth: 0.7,
-    borderRightWidth: 0.7,
+    borderLeftWidth: 0.8,
+    borderRightWidth: 0.8,
     flexDirection: "row",
     alignItems: "flex-end",
     boxSizing: "border-box",

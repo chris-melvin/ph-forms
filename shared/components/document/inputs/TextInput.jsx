@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   inputField: {
     height: "100%",
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 0.8,
     borderColor: "#000",
   },
   fieldLabel: {

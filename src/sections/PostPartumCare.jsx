@@ -122,7 +122,11 @@ export const PostPartumCare = () => {
               ) : (
                 <Text style={{ color: "#f00" }}>{item.number}. </Text>
               )}
-              {item.label}
+              {item.isChild ? (
+                <Text style={{ fontSize: "7.8px" }}>{item.label}</Text>
+              ) : (
+                <Text style={{ fontSize: "8.64px" }}>{item.label}</Text>
+              )}
               <Text style={{ fontSize: "6.96px" }}>{item?.subLabel}</Text>
             </Text>
           </View>

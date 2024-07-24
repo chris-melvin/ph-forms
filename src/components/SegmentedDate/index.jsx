@@ -4,7 +4,7 @@ import React from "react";
 import SegmentedLineInput from "../SegmentedLineInput";
 import Row from "../layout/Row";
 import Column from "../layout/Column";
-import Dash from "../../../shared/components/document/typography/Dash";
+import Dash from "../Dash";
 
 const styles = StyleSheet.create({
   label: {
@@ -22,6 +22,8 @@ const SegmentedDate = ({
   debug,
   innerHeight = ".08in",
   fontSize = "8.04px",
+  inputSpace = ".04in",
+  labelMarginTop,
 }) => (
   <Row
     style={[
@@ -40,7 +42,7 @@ const SegmentedDate = ({
     <Column
       style={{
         marginLeft: dateMarginLeft,
-        marginRight: ".04in",
+        marginRight: inputSpace,
       }}
     >
       <SegmentedLineInput
@@ -48,13 +50,20 @@ const SegmentedDate = ({
         width={boxWidth}
         innerHeight={innerHeight}
       />
-      <Text style={[styles.label, { fontSize: fontSize }]}>Month</Text>
+      <Text
+        style={[
+          styles.label,
+          { fontSize: fontSize, marginTop: labelMarginTop },
+        ]}
+      >
+        Month
+      </Text>
     </Column>
     <Dash />
     <Column
       style={{
-        marginLeft: ".04in",
-        marginRight: ".04in",
+        marginLeft: inputSpace,
+        marginRight: inputSpace,
       }}
     >
       <SegmentedLineInput
@@ -62,13 +71,20 @@ const SegmentedDate = ({
         width={boxWidth}
         innerHeight={innerHeight}
       />
-      <Text style={[styles.label, { fontSize: fontSize }]}>Day</Text>
+      <Text
+        style={[
+          styles.label,
+          { fontSize: fontSize, marginTop: labelMarginTop },
+        ]}
+      >
+        Day
+      </Text>
     </Column>
     <Dash />
     <Column
       style={{
-        marginLeft: ".04in",
-        marginRight: ".04in",
+        marginLeft: inputSpace,
+        marginRight: inputSpace,
       }}
     >
       <SegmentedLineInput
@@ -76,7 +92,14 @@ const SegmentedDate = ({
         width={boxWidth}
         innerHeight={innerHeight}
       />
-      <Text style={[styles.label, { fontSize: fontSize }]}>Year</Text>
+      <Text
+        style={[
+          styles.label,
+          { fontSize: fontSize, marginTop: labelMarginTop },
+        ]}
+      >
+        Year
+      </Text>
     </Column>
   </Row>
 );

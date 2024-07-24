@@ -113,7 +113,7 @@ export const SignatureSection = () => {
             </Column>
           </Row>
           <Text
-            style={{ margin: "0 auto", fontSize: "6.96px", ...styles.text }}
+            style={{ marginLeft: ".1in", fontSize: "6.96px", ...styles.text }}
           >
             Date Signed (Month / Day / Year)
           </Text>

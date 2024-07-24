@@ -26,14 +26,13 @@ export const PersonalDetails = () => {
       flexDirection: "row",
       justifyContent: "space-between",
       width: "3.0in",
-      marginRight: ".20in",
+      marginRight: ".17in",
     },
     timeContainer: {
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
-      width: "2.10in",
-      marginTop: ".1in",
+      width: "2.00in",
     },
     numberText: {
       fontSize: "8.76px",
@@ -70,7 +69,11 @@ export const PersonalDetails = () => {
           </Row>
           <Row>
             <LineInput
-              style={{ width: "5.09in", marginLeft: ".12in" }}
+              style={{
+                width: "5.09in",
+                marginLeft: ".08in",
+                fontSize: "8.04px",
+              }}
               fields={[
                 { label: "Last Name," },
                 { label: "First Name," },
@@ -86,7 +89,11 @@ export const PersonalDetails = () => {
                 <Text style={styles.numberText}>4. Date Admitted: </Text>
               </View>
               <View>
-                <SegmentedDate style={{ paddingTop: 0 }} />
+                <SegmentedDate
+                  style={{ paddingTop: 0 }}
+                  inputSpace=".08in"
+                  labelMarginTop=".03in"
+                />
               </View>
             </View>
             <View style={styles.timeContainer}>
@@ -104,7 +111,7 @@ export const PersonalDetails = () => {
                     fontSize: "7.04px",
                   }}
                   rightLabel="AM"
-                  style={{ marginRight: ".15in" }}
+                  style={{ marginRight: ".20in" }}
                 />
                 <TimeInput
                   width=".30in"
@@ -121,14 +128,23 @@ export const PersonalDetails = () => {
           <Row style={{ marginVertical: ".1in" }}>
             <View style={styles.dateContainer}>
               <View>
-                <Text style={styles.numberText}>5. Date Discharged: </Text>
+                <Text style={[styles.numberText, { marginTop: ".05in" }]}>
+                  5. Date Discharged:{" "}
+                </Text>
               </View>
               <View>
-                <SegmentedDate style={{ paddingTop: 0 }} />
+                <SegmentedDate style={{ paddingTop: 0 }} inputSpace=".08in" />
               </View>
             </View>
 
-            <View style={styles.timeContainer}>
+            <View
+              style={[
+                styles.timeContainer,
+                {
+                  marginTop: ".07in",
+                },
+              ]}
+            >
               <Text> Time Discharged: </Text>
               <View
                 style={{
@@ -143,7 +159,7 @@ export const PersonalDetails = () => {
                     fontSize: "7.04px",
                   }}
                   rightLabel="AM"
-                  style={{ marginRight: ".15in" }}
+                  style={{ marginRight: ".20in" }}
                 />
                 <TimeInput
                   width=".30in"

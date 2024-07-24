@@ -11,31 +11,8 @@ import CheckBoxInput from "../../shared/components/document/inputs/CheckBoxInput
 
 export const PatientDetails = () => {
   const styles = StyleSheet.create({
-    page: {
-      flexDirection: "row",
-    },
-    body: {
-      height: "100%",
-      width: "100%",
-      maxHeight: "100%",
-      fontSize: "8.64px",
-      paddingHorizontal: ".25in",
-      paddingVertical: ".15in",
-      boxSizing: "border-box",
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      flexGrow: 1,
-    },
-    logo: {
-      width: "2.41in",
-      height: "1.1in",
-      paddingVertical: ".10in",
-    },
     text: {
       fontFamily: "Arial Narrow",
-      fontStretch: "condensed",
     },
     numberText: {
       fontSize: "8.76px",
@@ -53,7 +30,7 @@ export const PatientDetails = () => {
   return (
     <>
       {/* Part 1, number 6 */}
-      <FieldInput />
+      <FieldInput height={0} />
       <Row>
         <View style={{ height: "2in" }}>
           <Text style={[styles.text, styles.numberText]}>
@@ -80,7 +57,7 @@ export const PatientDetails = () => {
 
       <Row
         style={{
-          marginTop: ".2in",
+          marginTop: ".24in",
           marginLeft: ".1in",
           marginBottom: ".6in",
           ...styles.text,
@@ -94,35 +71,35 @@ export const PatientDetails = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 width: ".87in",
-                marginRight: ".20in",
+                marginRight: ".14in",
               }}
             >
               <Text>Vital Signs </Text> <Text>:</Text>
             </View>
             <View>
               <TextInput
-                labelStyle={{ fontSize: "8.76px" }}
+                labelStyle={{ fontSize: "8.76px", fontFamily: "Arial Narrow" }}
                 label="BP :"
                 width=".47in"
               />
             </View>
             <View>
               <TextInput
-                labelStyle={{ fontSize: "8.76px" }}
+                labelStyle={{ fontSize: "8.76px", fontFamily: "Arial Narrow" }}
                 label="CR:"
                 width=".55in"
               />
             </View>
             <View style={{ marginRight: ".15in" }}>
               <TextInput
-                labelStyle={{ fontSize: "8.76px" }}
+                labelStyle={{ fontSize: "8.76px", fontFamily: "Arial Narrow" }}
                 label="RR:"
                 width=".47in"
               />
             </View>
             <View>
               <TextInput
-                labelStyle={{ fontSize: "8.76px" }}
+                labelStyle={{ fontSize: "8.76px", fontFamily: "Arial Narrow" }}
                 label="Temperature:"
                 width=".55in"
               />
