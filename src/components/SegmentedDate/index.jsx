@@ -2,9 +2,9 @@ import { StyleSheet, Text } from "@react-pdf/renderer";
 import React from "react";
 
 import SegmentedLineInput from "../SegmentedLineInput";
-import Row from "../layout/Row";
-import Column from "../layout/Column";
 import Dash from "../Dash";
+import Row from "../../../shared/components/document/ClaimForm/layout/Row";
+import Column from "../../../shared/components/document/ClaimForm/layout/Column";
 
 const styles = StyleSheet.create({
   label: {
@@ -21,6 +21,7 @@ const SegmentedDate = ({
   boxWidth = ".15in",
   debug,
   innerHeight = ".08in",
+  outerHeight = ".18in",
   fontSize = "8.04px",
   inputSpace = ".04in",
   labelMarginTop,
@@ -49,6 +50,7 @@ const SegmentedDate = ({
         number={2}
         width={boxWidth}
         innerHeight={innerHeight}
+        outerHeight={outerHeight}
       />
       <Text
         style={[
@@ -59,7 +61,7 @@ const SegmentedDate = ({
         Month
       </Text>
     </Column>
-    <Dash />
+    <Dash height={outerHeight} />
     <Column
       style={{
         marginLeft: inputSpace,
@@ -70,6 +72,7 @@ const SegmentedDate = ({
         number={2}
         width={boxWidth}
         innerHeight={innerHeight}
+        outerHeight={outerHeight}
       />
       <Text
         style={[
@@ -80,7 +83,7 @@ const SegmentedDate = ({
         Day
       </Text>
     </Column>
-    <Dash />
+    <Dash height={outerHeight} />
     <Column
       style={{
         marginLeft: inputSpace,
@@ -91,6 +94,7 @@ const SegmentedDate = ({
         number={4}
         width={boxWidth}
         innerHeight={innerHeight}
+        outerHeight={outerHeight}
       />
       <Text
         style={[

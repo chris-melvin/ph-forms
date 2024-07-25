@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import React from "react";
 
 import SegmentedLineInput from "../SegmentedLineInput";
-import Row from "../layout/Row";
-import Column from "../layout/Column";
+import Row from "../../../shared/components/document/ClaimForm/layout/Row";
+import Column from "../../../shared/components/document/ClaimForm/layout/Column";
 
 const styles = StyleSheet.create({
   label: {

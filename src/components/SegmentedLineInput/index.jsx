@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
   },
   squaresContainer: {
-    height: ".18in",
+    // height: ".18in",
     borderLeftWidth: 0.8,
     borderRightWidth: 0.8,
     flexDirection: "row",
@@ -32,7 +32,8 @@ function SegmentedLineInput({
   number,
   style,
   width = ".15in",
-  innerHeight,
+  innerHeight = ".08in",
+  outerHeight = ".18in",
   removeBorderLeft = false,
 }) {
   return (
@@ -41,6 +42,7 @@ function SegmentedLineInput({
         styles.squaresContainer,
         style,
         removeBorderLeft ? styles.removeBorderLeft : {},
+        { height: outerHeight },
       ]}
     >
       {Array.from({ length: number }, (_, index) => (
@@ -51,8 +53,7 @@ function SegmentedLineInput({
             index === 0 ? styles.firstSquare : {},
             index === number - 1 ? styles.lastsquare : {},
             number === 1 ? styles.borderRight : {},
-            width ? { width } : {},
-            innerHeight ? { height: innerHeight } : {},
+            { height: innerHeight, width: width },
           ]}
         />
       ))}
