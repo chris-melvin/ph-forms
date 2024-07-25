@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import React from "react";
-import Row from "../layout/Row";
+import Row from "../ClaimForm/layout/Row";
 
 const styles = StyleSheet.create({
   fieldContainer: {

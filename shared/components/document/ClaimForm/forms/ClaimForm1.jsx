@@ -5,29 +5,29 @@ import {
   StyleSheet,
   Text,
   View,
-} from '@react-pdf/renderer';
-import React from 'react';
-import MemberConsentAuthorizationPart from '../document-parts/MemberConsentAuthorization';
-import PhilHealthHeaderPart from '../document-parts/PhilHealthHeader';
-import PhilHealthPinPart from '../document-parts/PhilHealthPin';
+} from "@react-pdf/renderer";
+import React from "react";
+import MemberConsentAuthorizationPart from "../document-parts/MemberConsentAuthorization";
+import PhilHealthHeaderPart from "../document-parts/PhilHealthHeader";
+import PhilHealthPinPart from "../document-parts/PhilHealthPin";
 
-import BoxInput from '../inputs/BoxInput';
-import CheckBoxInput from '../inputs/CheckBoxInput';
-import DateInput from '../inputs/DateInput';
-import FieldInput from '../inputs/FieldInput';
-import NameInput from '../inputs/NameInput';
-import StackedBoxInput from '../inputs/StackedBoxInput';
+import BoxInput from "../inputs/BoxInput";
+import CheckBoxInput from "../inputs/CheckBoxInput";
+import DateInput from "../inputs/DateInput";
+import FieldInput from "../inputs/FieldInput";
+import NameInput from "../inputs/NameInput";
+import StackedBoxInput from "../inputs/StackedBoxInput";
 
-import Column from '../layout/Column';
-import Row from '../layout/Row';
+import Column from "../layout/Column";
+import Row from "../layout/Row";
 
-import BoldText from '../typography/BoldText';
-import Heading1 from '../typography/Heading1';
-import SectionDivider from '../typography/SectionDivider';
+import BoldText from "../../typography/BoldText";
+import Heading1 from "../../typography/Heading1";
+import SectionDivider from "../../typography/SectionDivider";
 
-import PhilHealthLogo from "assets/images/philhealth_logo-wide.png";
+import PhilHealthLogo from "../logo/philhealth_logo.png";
 
-import { registerMinionPro, registerSourceSans } from "components/document/fonts";
+import { registerMinionPro, registerSourceSans } from "../../fonts";
 
 registerSourceSans();
 registerMinionPro();
@@ -36,49 +36,49 @@ const DEFAULT_LETTER_SPACING = -0.35;
 
 const styles = StyleSheet.create({
   page: {
-    maxWidth: '100%',
-    padding: '0.25in',
+    maxWidth: "100%",
+    padding: "0.25in",
   },
 
   body: {
     borderWidth: 3,
-    borderColor: '#000',
-    borderStyle: 'solid',
-    height: '100%',
-    maxHeight: '100%',
-    fontFamily: 'Source Sans',
+    borderColor: "#000",
+    borderStyle: "solid",
+    height: "100%",
+    maxHeight: "100%",
+    fontFamily: "Source Sans",
     fontSize: 8.64,
   },
 
   top_header: {
-    borderBottom: '1.5 #000 solid',
-    paddingBottom: '0.20in',
+    borderBottom: "1.5 #000 solid",
+    paddingBottom: "0.20in",
   },
   header_logo: {
-    width: '1.40in',
-    height: '0.56in',
-    marginRight: '0.42in',
-    marginTop: '0.42in',
-    marginLeft: '0.28in',
+    width: "1.40in",
+    height: "0.56in",
+    marginRight: "0.42in",
+    marginTop: "0.42in",
+    marginLeft: "0.28in",
   },
   header_right: {
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: 'Source Sans',
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "Source Sans",
   },
   bottom_header: {
-    marginTop: '0.05in',
-    marginLeft: '0.07in',
+    marginTop: "0.05in",
+    marginLeft: "0.07in",
     letterSpacing: DEFAULT_LETTER_SPACING,
   },
   part_one_section: {
-    margin: '0.07in',
+    margin: "0.07in",
     marginTop: 0,
     letterSpacing: DEFAULT_LETTER_SPACING,
   },
   part_two_section: {
-    margin: '0.07in',
+    margin: "0.07in",
     marginTop: 0,
     letterSpacing: DEFAULT_LETTER_SPACING,
   },
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
   },
   part_five_section: {
     letterSpacing: DEFAULT_LETTER_SPACING,
-    marginTop: '0.10in',
-    marginLeft: '0.28in',
+    marginTop: "0.10in",
+    marginLeft: "0.28in",
   },
 });
 
@@ -111,18 +111,15 @@ const ClaimForm1 = () => {
             <Row style={styles.top_header}>
               <Column
                 style={{
-                  height: '100%',
+                  height: "100%",
                 }}
               >
-                <Image
-                  style={styles.header_logo}
-                  src={PhilHealthLogo}
-                />
+                <Image style={styles.header_logo} src={PhilHealthLogo} />
               </Column>
               <PhilHealthHeaderPart
                 style={{
-                  marginRight: '0.40in',
-                  marginTop: '0.35in',
+                  marginRight: "0.40in",
+                  marginTop: "0.35in",
                 }}
               />
               <Column>
@@ -131,46 +128,48 @@ const ClaimForm1 = () => {
                   <Text>is NOT FOR SALE</Text>
                   <View
                     style={{
-                      height: '0.50in',
-                      width: '100%',
-                      position: 'relative',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
+                      height: "0.50in",
+                      width: "100%",
+                      position: "relative",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   ></View>
                   <Text
                     style={{
-                      position: 'absolute',
+                      position: "absolute",
                       fontSize: 38,
-                      fontFamily: 'Source Sans',
-                      alignSelf: 'center',
-                      top: '0.25in',
-                      fontWeight: "bold"
+                      fontFamily: "Source Sans",
+                      alignSelf: "center",
+                      top: "0.25in",
+                      fontWeight: "bold",
                     }}
                   >
                     CF-1
                   </Text>
-                  <Text style={{ fontFamily: 'Source Sans', fontWeight: "bold" }}>
+                  <Text
+                    style={{ fontFamily: "Source Sans", fontWeight: "bold" }}
+                  >
                     (Claim Form 1)
                   </Text>
                   <Text>Revised September 2018</Text>
                 </Column>
                 <Column
                   style={{
-                    marginTop: '0.05in',
+                    marginTop: "0.05in",
                   }}
                 >
                   <View
                     style={{
                       right: 0,
-                      position: 'absolute',
-                      flexDirection: 'row',
+                      position: "absolute",
+                      flexDirection: "row",
                     }}
                   >
                     <Text
                       style={{
-                        alignSelf: 'center',
+                        alignSelf: "center",
                         paddingRight: 4.32,
                       }}
                     >
@@ -222,22 +221,22 @@ const ClaimForm1 = () => {
               </BoldText>
             </Column>
           </Column>
-          <SectionDivider text={'PART I - MEMBER INFORMATION'} />
+          <SectionDivider text={"PART I - MEMBER INFORMATION"} />
           <Column style={styles.part_one_section}>
             <Row
               style={{
-                marginTop: '0.03in',
+                marginTop: "0.03in",
               }}
             >
               <PhilHealthPinPart
                 style={{
-                  alignItems: 'center',
+                  alignItems: "center",
                 }}
-                label={'1. PhilHealth Identification Number (PIN) of Member:'}
+                label={"1. PhilHealth Identification Number (PIN) of Member:"}
               />
             </Row>
             <Row>
-              <Column style={{ marginRight: '0.15in', marginTop: 4 }}>
+              <Column style={{ marginRight: "0.15in", marginTop: 4 }}>
                 <Heading1>2. Name of Member:</Heading1>
                 <NameInput />
               </Column>
@@ -248,56 +247,56 @@ const ClaimForm1 = () => {
             </Row>
             <Row
               style={{
-                marginTop: '0.05in',
+                marginTop: "0.05in",
               }}
             >
               <Column>
                 <Row>
-                  <Heading1 style={{ marginRight: '4.79in' }}>
+                  <Heading1 style={{ marginRight: "4.79in" }}>
                     4. Mailing Address:
                   </Heading1>
                   <Heading1
                     style={{
-                      marginRight: '0.07in',
+                      marginRight: "0.07in",
                     }}
                   >
                     5. Sex:
                   </Heading1>
                   <CheckBoxInput
                     isSmall
-                    label={'Male'}
+                    label={"Male"}
                     style={{
-                      marginRight: '0.05in',
+                      marginRight: "0.05in",
                     }}
                   />
-                  <CheckBoxInput isSmall label={'Female'} />
+                  <CheckBoxInput isSmall label={"Female"} />
                 </Row>
                 <Row
                   style={{
-                    marginTop: '0.03',
+                    marginTop: "0.03",
                   }}
                 >
                   <FieldInput
-                    label='Unit/Room No./Floor'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="Unit/Room No./Floor"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='Building Name'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="Building Name"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='Lot/Blk/House/Bldg.No'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="Lot/Blk/House/Bldg.No"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='Street'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.13in'
+                    label="Street"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.13in"
                   />
-                  <FieldInput label='Subdivision/Village' width='1.91in' />
+                  <FieldInput label="Subdivision/Village" width="1.91in" />
                 </Row>
                 <Row
                   style={{
@@ -305,90 +304,90 @@ const ClaimForm1 = () => {
                   }}
                 >
                   <FieldInput
-                    label='Barangay'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="Barangay"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='City/Municipality'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="City/Municipality"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='Province'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.38in'
+                    label="Province"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.38in"
                   />
                   <FieldInput
-                    label='Country'
-                    style={{ marginRight: '0.16in' }}
-                    width='1.13in'
+                    label="Country"
+                    style={{ marginRight: "0.16in" }}
+                    width="1.13in"
                   />
-                  <FieldInput label='Zip Code' width='1.91in' />
+                  <FieldInput label="Zip Code" width="1.91in" />
                 </Row>
               </Column>
             </Row>
             <Row
               style={{
-                marginTop: '0.10in',
+                marginTop: "0.10in",
               }}
             >
               <Column>
                 <Heading1>6. Contact Information:</Heading1>
                 <Row>
                   <FieldInput
-                    label='Landline No. (Area Code + Tel. No.)'
-                    style={{ marginRight: '0.16in' }}
-                    width='2.53in'
+                    label="Landline No. (Area Code + Tel. No.)"
+                    style={{ marginRight: "0.16in" }}
+                    width="2.53in"
                   />
                   <FieldInput
-                    label='Mobile No.'
-                    style={{ marginRight: '0.16in' }}
-                    width='2.3in'
+                    label="Mobile No."
+                    style={{ marginRight: "0.16in" }}
+                    width="2.3in"
                   />
-                  <FieldInput label='Email Address' width='2.68in' />
+                  <FieldInput label="Email Address" width="2.68in" />
                 </Row>
               </Column>
             </Row>
             <Row
               style={{
-                alignItems: 'center',
-                marginTop: '0.10in',
+                alignItems: "center",
+                marginTop: "0.10in",
               }}
             >
-              <Heading1 style={{ marginRight: '0.08in' }}>
+              <Heading1 style={{ marginRight: "0.08in" }}>
                 7. Patient is the member?
               </Heading1>
               <CheckBoxInput
                 isSmall
-                label={'Yes, Proceed to Part III'}
+                label={"Yes, Proceed to Part III"}
                 style={{
-                  marginRight: '0.05in',
+                  marginRight: "0.05in",
                 }}
               />
-              <CheckBoxInput isSmall label={'No, Proceed to Part II'} />
+              <CheckBoxInput isSmall label={"No, Proceed to Part II"} />
             </Row>
           </Column>
           <SectionDivider
-            text={'PART II - PATIENT INFORMATION'}
+            text={"PART II - PATIENT INFORMATION"}
             description={
-              '(To be filled-out only if the patient is a dependent)'
+              "(To be filled-out only if the patient is a dependent)"
             }
           />
           <Column style={styles.part_two_section}>
             <Row>
               <PhilHealthPinPart
                 style={{
-                  marginTop: '0.03in',
-                  alignItems: 'center',
+                  marginTop: "0.03in",
+                  alignItems: "center",
                 }}
                 label={
-                  '1. PhilHealth Identification Number (PIN) of Dependent:'
+                  "1. PhilHealth Identification Number (PIN) of Dependent:"
                 }
               />
             </Row>
             <Row>
-              <Column style={{ marginRight: '0.15in', marginTop: 4 }}>
+              <Column style={{ marginRight: "0.15in", marginTop: 4 }}>
                 <Heading1>2. Name of Patient:</Heading1>
                 <NameInput />
               </Column>
@@ -400,56 +399,56 @@ const ClaimForm1 = () => {
             <Row>
               <Row
                 style={{
-                  marginRight: '2.61in',
+                  marginRight: "2.61in",
                 }}
               >
-                <Heading1 style={{ marginRight: '0.08in' }}>
+                <Heading1 style={{ marginRight: "0.08in" }}>
                   4. Relationship to Member:
                 </Heading1>
                 <CheckBoxInput
-                  label={'Child'}
+                  label={"Child"}
                   isSmall
                   style={{
-                    marginRight: '0.05in',
+                    marginRight: "0.05in",
                   }}
                 />
                 <CheckBoxInput
-                  label={'Parent'}
+                  label={"Parent"}
                   isSmall
                   style={{
-                    marginRight: '0.05in',
+                    marginRight: "0.05in",
                   }}
                 />
-                <CheckBoxInput isSmall label={'Spouse'} />
+                <CheckBoxInput isSmall label={"Spouse"} />
               </Row>
 
               <Row>
                 <Heading1
                   style={{
-                    marginRight: '0.07in',
+                    marginRight: "0.07in",
                   }}
                 >
                   5. Sex:
                 </Heading1>
                 <CheckBoxInput
-                  label={'Male'}
+                  label={"Male"}
                   isSmall
                   style={{
-                    marginRight: '0.05in',
+                    marginRight: "0.05in",
                   }}
                 />
-                <CheckBoxInput isSmall label={'Female'} />
+                <CheckBoxInput isSmall label={"Female"} />
               </Row>
             </Row>
           </Column>
-          <SectionDivider text={'PART III - MEMBER CERTIFICATION'} />
+          <SectionDivider text={"PART III - MEMBER CERTIFICATION"} />
           <Column style={styles.part_three_section}>
             <Row>
-              <Column style={{ width: '100%' }}>
+              <Column style={{ width: "100%" }}>
                 <Text
                   style={{
-                    textAlign: 'center',
-                    fontFamily: 'Source Sans',
+                    textAlign: "center",
+                    fontFamily: "Source Sans",
                     fontStyle: `italic`,
                     fontSize: 9.56,
                     marginTop: 5.5,
@@ -463,93 +462,93 @@ const ClaimForm1 = () => {
             </Row>
             <Row
               style={{
-                marginLeft: '0.55in',
-                marginBottom: '0.08in',
+                marginLeft: "0.55in",
+                marginBottom: "0.08in",
               }}
             >
               <Column
                 style={{
-                  marginRight: '0.86in',
+                  marginRight: "0.86in",
                 }}
               >
                 <FieldInput
-                  width='2.73in'
-                  label={'Signature Over Printed Name of Member'}
+                  width="2.73in"
+                  label={"Signature Over Printed Name of Member"}
                 />
                 <DateInput
-                  label={'Date Signed'}
-                  style={{ marginTop: '0.11in' }}
+                  label={"Date Signed"}
+                  style={{ marginTop: "0.11in" }}
                 />
               </Column>
               <Column>
                 <FieldInput
-                  width='3.55in'
+                  width="3.55in"
                   label={
-                    'Signature Over Printed Name of Member’s Representative'
+                    "Signature Over Printed Name of Member’s Representative"
                   }
                 />
                 <DateInput
-                  label={'Date Signed'}
-                  style={{ marginTop: '0.11in', marginLeft: '0.11in' }}
+                  label={"Date Signed"}
+                  style={{ marginTop: "0.11in", marginLeft: "0.11in" }}
                 />
               </Column>
             </Row>
             <Row
               style={{
-                marginLeft: '0.07in',
-                marginBottom: '0.03in',
+                marginLeft: "0.07in",
+                marginBottom: "0.03in",
               }}
             >
               <MemberConsentAuthorizationPart />
             </Row>
           </Column>
           <SectionDivider
-            text={'PART IV - EMPLOYER’S CERTIFICATION'}
-            description={'(for employed members only)'}
+            text={"PART IV - EMPLOYER’S CERTIFICATION"}
+            description={"(for employed members only)"}
           />
           <Column style={styles.part_four_section}>
             <Column
               style={{
-                borderBottom: '1.5 #000 solid',
+                borderBottom: "1.5 #000 solid",
               }}
             >
               <Column
                 style={{
-                  marginLeft: '0.07in',
+                  marginLeft: "0.07in",
                 }}
               >
-                <Row style={{marginBottom: 4}}>
+                <Row style={{ marginBottom: 4 }}>
                   <PhilHealthPinPart
-                    label={'1. PhilHealth Employer Number (PEN):'}
-                    style={{ marginRight: '0.51in', marginTop: '0.05in' }}
+                    label={"1. PhilHealth Employer Number (PEN):"}
+                    style={{ marginRight: "0.51in", marginTop: "0.05in" }}
                   />
                   <Heading1>2. Contact No.:</Heading1>
-                  <FieldInput width='1.72in' />
+                  <FieldInput width="1.72in" />
                 </Row>
                 <Heading1>3. Business Name:</Heading1>
                 <Row
                   style={{
-                    justifyContent: 'center',
-                    marginBottom: '0.12in',
+                    justifyContent: "center",
+                    marginBottom: "0.12in",
                   }}
                 >
                   <FieldInput
-                    label={'Business Name of Employer'}
-                    width='6.59in'
+                    label={"Business Name of Employer"}
+                    width="6.59in"
                   />
                 </Row>
               </Column>
             </Column>
-            <Column style={{ width: '100%', marginLeft: '0.07in' }}>
+            <Column style={{ width: "100%", marginLeft: "0.07in" }}>
               <Heading1>4. CERTIFICATION OF EMPLOYER:</Heading1>
               <Column
                 style={{
-                  fontFamily: 'Source Sans',
+                  fontFamily: "Source Sans",
                 }}
               >
                 <Text
                   style={{
-                    marginLeft: '0.15in',
+                    marginLeft: "0.15in",
                     marginTop: 6.5,
                   }}
                 >
@@ -569,53 +568,53 @@ const ClaimForm1 = () => {
               </Column>
               <Row
                 style={{
-                  marginBottom: '0.10in',
+                  marginBottom: "0.10in",
                 }}
               >
                 <FieldInput
                   label={
-                    'Signature Over Printed Name of Employer/Authorized Representative'
+                    "Signature Over Printed Name of Employer/Authorized Representative"
                   }
-                  width='3.07in'
+                  width="3.07in"
                   style={{
-                    marginRight: '0.17in',
+                    marginRight: "0.17in",
                   }}
                 />
                 <FieldInput
-                  label={'Official Capacity/Designation'}
-                  width='2.09in'
+                  label={"Official Capacity/Designation"}
+                  width="2.09in"
                   style={{
-                    marginRight: '0.17in',
+                    marginRight: "0.17in",
                   }}
                 />
-                <DateInput label={'Date Signed'} />
+                <DateInput label={"Date Signed"} />
               </Row>
             </Column>
           </Column>
-          <SectionDivider text={'PART V - FOR PHILHEALTH USE ONLY'} />
+          <SectionDivider text={"PART V - FOR PHILHEALTH USE ONLY"} />
           <Row style={styles.part_five_section}>
             <StackedBoxInput
               isBordered
-              label='Date Received:'
-              upperText='LHIO'
-              lowerText='PRO'
+              label="Date Received:"
+              upperText="LHIO"
+              lowerText="PRO"
               style={{
-                marginRight: '0.58in',
+                marginRight: "0.58in",
               }}
-              boxWidth='1.90in'
+              boxWidth="1.90in"
             />
             <StackedBoxInput
               isBordered
-              label='By:'
-              upperText=''
-              lowerText='LHIO/PRO Signature Over Printed Name'
-              boxWidth='2.14in'
+              label="By:"
+              upperText=""
+              lowerText="LHIO/PRO Signature Over Printed Name"
+              boxWidth="2.14in"
             />
           </Row>
         </Column>
       </Page>
     </Document>
   );
-}
+};
 
 export default ClaimForm1;

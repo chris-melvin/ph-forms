@@ -1,9 +1,9 @@
 import { StyleSheet, Text } from "@react-pdf/renderer";
 import React from "react";
-import Dash from "../typography/Dash";
+import Column from "../layout/Column";
+import Row from "../layout/Row";
+import Dash from "../../typography/Dash";
 import BoxInput from "./BoxInput";
-import Column from "../ClaimForm/layout/Column";
-import Row from "../ClaimForm/layout/Row";
 
 const styles = StyleSheet.create({
   label: {

@@ -1,9 +1,9 @@
 import { StyleSheet, Text } from "@react-pdf/renderer";
 import React from "react";
-
+import Column from "../layout/Column";
+import Row from "../layout/Row";
+import Dash from "../../typography/Dash";
 import SegmentedLineInput from "./SegmentedLineInput";
-import Row from "../ClaimForm/layout/Row";
-import Column from "../ClaimForm/layout/Column";
 
 const styles = StyleSheet.create({
   label: {
@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const SegmentedTimeInput = ({
+const SegmentedDateInput = ({
   label,
-  hourMarginLeft = ".10in",
+  dateMarginLeft = ".10in",
   style,
   debug,
 }) => (
@@ -37,27 +37,23 @@ const SegmentedTimeInput = ({
     )}
     <Column
       style={{
-        marginLeft: hourMarginLeft,
+        marginLeft: dateMarginLeft,
       }}
     >
       <SegmentedLineInput number={2} />
-      <Text style={styles.label}>hour</Text>
+      <Text style={styles.label}>month</Text>
     </Column>
-    <Text
-      style={{
-        fontSize: 12,
-        marginHorizontal: 2,
-        bottom: 2,
-        textAlign: "center",
-      }}
-    >
-      :
-    </Text>
+    <Dash />
     <Column>
       <SegmentedLineInput number={2} />
-      <Text style={styles.label}>minute</Text>
+      <Text style={styles.label}>day</Text>
+    </Column>
+    <Dash />
+    <Column>
+      <SegmentedLineInput number={4} />
+      <Text style={styles.label}>year</Text>
     </Column>
   </Row>
 );
 
-export default SegmentedTimeInput;
+export default SegmentedDateInput;

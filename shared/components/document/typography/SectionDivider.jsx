@@ -1,30 +1,31 @@
-import { Text, View } from '@react-pdf/renderer';
-import React from 'react';
+import { Text, View } from "@react-pdf/renderer";
+import React from "react";
 
-function SectionDivider({ text, description }) {
+function SectionDivider({ text, description, flexDirection = "row" }) {
   return (
     <View
       style={{
-        backgroundColor: 'black',
-        color: 'white',
-        fontFamily: 'Source Sans',
+        backgroundColor: "black",
+        color: "white",
+        fontFamily: "Source Sans",
         fontWeight: "bold",
         fontSize: 11.52,
-        justifyContent: 'center',
-        display: 'flex',
-        width: '100%',
-        flexDirection: 'row',
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+        width: "100%",
+        flexDirection: flexDirection,
       }}
     >
       <Text>{text}</Text>
       {description ? (
         <Text
           style={{
-            fontFamily: 'Source Sans',
+            fontFamily: "Source Sans",
             fontWeight: "light",
             fontSize: 8.64,
-            marginLeft: '0.12in',
-            alignSelf: 'flex-end',
+            marginLeft: "0.12in",
+            alignSelf: flexDirection === "row" ? "flex-end" : "center",
             bottom: 1,
             letterSpacing: -0.35,
           }}

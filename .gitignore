@@ -2,3 +2,10 @@ node_modules
 
 .prettierrc
 
+# Ignore all files in the .vscode directory
+*:Zone.Identifier
+
+# Ignore MAC OS files
+.DS_Store
+
+./ClaimForm

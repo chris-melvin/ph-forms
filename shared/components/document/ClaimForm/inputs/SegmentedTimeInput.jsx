@@ -1,9 +1,8 @@
 import { StyleSheet, Text } from "@react-pdf/renderer";
 import React from "react";
-
+import Column from "../layout/Column";
+import Row from "../layout/Row";
 import SegmentedLineInput from "./SegmentedLineInput";
-import Row from "../ClaimForm/layout/Row";
-import Column from "../ClaimForm/layout/Column";
 
 const styles = StyleSheet.create({
   label: {
@@ -13,12 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SegmentedTimeInput = ({
-  label,
-  hourMarginLeft = ".10in",
-  style,
-  debug,
-}) => (
+const SegmentedTimeInput = ({ label, hourMarginLeft = ".10in", style, debug }) => (
   <Row
     style={[
       {
@@ -28,13 +22,7 @@ const SegmentedTimeInput = ({
     ]}
     debug={debug}
   >
-    {label ? (
-      <Text style={{ fontFamily: "Source Sans", fontWeight: "light" }}>
-        {label}
-      </Text>
-    ) : (
-      <></>
-    )}
+    {label ? <Text style={{ fontFamily: "Source Sans", fontWeight: "light" }}>{label}</Text> : <></>}
     <Column
       style={{
         marginLeft: hourMarginLeft,

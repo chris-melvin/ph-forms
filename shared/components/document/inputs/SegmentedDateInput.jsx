@@ -1,9 +1,9 @@
 import { StyleSheet, Text } from "@react-pdf/renderer";
 import React from "react";
-import Column from "../layout/Column";
-import Row from "../layout/Row";
 import Dash from "../typography/Dash";
 import SegmentedLineInput from "./SegmentedLineInput";
+import Column from "../ClaimForm/layout/Column";
+import Row from "../ClaimForm/layout/Row";
 
 const styles = StyleSheet.create({
   label: {
@@ -13,7 +13,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const SegmentedDateInput = ({ label, dateMarginLeft = ".10in", style, debug }) => (
+const SegmentedDateInput = ({
+  label,
+  dateMarginLeft = ".10in",
+  style,
+  debug,
+}) => (
   <Row
     style={[
       {
@@ -23,7 +28,13 @@ const SegmentedDateInput = ({ label, dateMarginLeft = ".10in", style, debug }) =
     ]}
     debug={debug}
   >
-    {label ? <Text style={{ fontFamily: "Source Sans", fontWeight: "light" }}>{label}</Text> : <></>}
+    {label ? (
+      <Text style={{ fontFamily: "Source Sans", fontWeight: "light" }}>
+        {label}
+      </Text>
+    ) : (
+      <></>
+    )}
     <Column
       style={{
         marginLeft: dateMarginLeft,

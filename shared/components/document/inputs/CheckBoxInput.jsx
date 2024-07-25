@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import Row from "../layout/Row";
+
 import BoxInput from "./BoxInput";
+import Row from "../ClaimForm/layout/Row";
 
 const styles = StyleSheet.create({
   label: {

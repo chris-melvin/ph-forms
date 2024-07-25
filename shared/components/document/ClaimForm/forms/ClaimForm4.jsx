@@ -1,10 +1,15 @@
-import { Document, Page, StyleSheet, View, Text, Image } from "@react-pdf/renderer";
+import {
+  Document,
+  Page,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+} from "@react-pdf/renderer";
 
-import PhilHealthLogo from "assets/images/philhealth_logo-wide.png";
+import PhilHealthLogo from "../logo/philhealth_logo.png";
 
-import SignatureField from "components/document/sections/SignatureField";
-
-import { registerMinionPro, registerSourceSans } from "components/document/fonts";
+import { registerMinionPro, registerSourceSans } from "../../fonts";
 import CheckBoxInput from "../inputs/CheckBoxInput";
 import SegmentedLineInput from "../inputs/SegmentedLineInput";
 import WideLineInput from "../inputs/WideLineInput";
@@ -15,12 +20,13 @@ import StackedBoxInput from "../inputs/StackedBoxInput";
 
 import Column from "../layout/Column";
 import Row from "../layout/Row";
-import BoldText from "../typography/BoldText";
-import SectionDividerBordered from "../typography/SectionDividerBordered";
+import BoldText from "../../typography/BoldText";
+import SectionDividerBordered from "../../typography/SectionDividerBordered";
 import BorderedField from "../sections/BorderedField";
 import SectionContent from "../sections/SectionContent";
 import BorderedRow from "../sections/BorderedRow";
 import BorderedCell from "../sections/BorderedCell";
+import SignatureField from "../../sections/SignatureField";
 
 registerSourceSans();
 registerMinionPro();
@@ -80,7 +86,11 @@ const ClaimForm4 = ({ values, signatures }) => (
       }}
       style={styles.page}
     >
-      <SignatureField signature={signatures?.find((signature) => signature?.page === 0)?.image} />
+      <SignatureField
+        signature={
+          signatures?.find((signature) => signature?.page === 0)?.image
+        }
+      />
       <Column style={styles.body}>
         <Column>
           <Row style={styles.top_header}>
@@ -115,7 +125,9 @@ const ClaimForm4 = ({ values, signatures }) => (
                 >
                   CF4
                 </Text>
-                <Text style={{ fontFamily: "Source Sans", fontWeight: "bold" }}>(Claim Form 4)</Text>
+                <Text style={{ fontFamily: "Source Sans", fontWeight: "bold" }}>
+                  (Claim Form 4)
+                </Text>
                 <Text>February 2020</Text>
               </Column>
               <Column
@@ -146,26 +158,39 @@ const ClaimForm4 = ({ values, signatures }) => (
           <Column style={styles.bottom_header}>
             <BoldText>IMPORTANT REMINDERS:</BoldText>
             <Row>
-              <Text>PLEASE FILL OUT APPROPRIATE FIELDS, WRITE IN CAPITAL LETTERS AND CHECK THE APPROPRIATE BOXES.</Text>
+              <Text>
+                PLEASE FILL OUT APPROPRIATE FIELDS, WRITE IN CAPITAL LETTERS AND
+                CHECK THE APPROPRIATE BOXES.
+              </Text>
             </Row>
             <Row>
-              <Text>This form, together with other supporting documents, should be filed within </Text>
+              <Text>
+                This form, together with other supporting documents, should be
+                filed within{" "}
+              </Text>
               <BoldText>sixty (60) calendar days</BoldText>
               <Text> from date of discharge.</Text>
             </Row>
             <Row>
-              <Text>All information, fields and tick boxes in this form are necessary. </Text>
-              <BoldText>Claim forms with incomplete information shall not be processed.</BoldText>
+              <Text>
+                All information, fields and tick boxes in this form are
+                necessary.{" "}
+              </Text>
+              <BoldText>
+                Claim forms with incomplete information shall not be processed.
+              </BoldText>
             </Row>
             <Row>
               <BoldText>
-                FALSE / INCORRECT INFORMATION OR MISREPRESENTATION SHALL BE SUBJECT TO CRIMINAL, CIVIL OR ADMINISTRATIVE
-                LIABILITIES.
+                FALSE / INCORRECT INFORMATION OR MISREPRESENTATION SHALL BE
+                SUBJECT TO CRIMINAL, CIVIL OR ADMINISTRATIVE LIABILITIES.
               </BoldText>
             </Row>
           </Column>
         </Column>
-        <SectionDividerBordered>I. HEALTH CARE INSTITUTION (HCI) INFORMATION</SectionDividerBordered>
+        <SectionDividerBordered>
+          I. HEALTH CARE INSTITUTION (HCI) INFORMATION
+        </SectionDividerBordered>
         <SectionContent>
           <Row>
             <BorderedField label="1. Name of HCI" />
@@ -192,7 +217,11 @@ const ClaimForm4 = ({ values, signatures }) => (
               <BorderedField label="1. Name of Patient">
                 <WideLineInput
                   labelStyle={{ paddingBottom: 5 }}
-                  fields={[{ label: "Last Name" }, { label: "First Name" }, { label: "Middle Name" }]}
+                  fields={[
+                    { label: "Last Name" },
+                    { label: "First Name" },
+                    { label: "Middle Name" },
+                  ]}
                 />
               </BorderedField>
               <BorderedField label="5. Chief Complaint" customHeight="0.36in" />
@@ -210,21 +239,45 @@ const ClaimForm4 = ({ values, signatures }) => (
           </Row>
           <Row>
             <Column style={{ flexBasis: "32.5%" }}>
-              <BorderedField label="6. Admitting Diagnosis" style={{ height: "0.92in" }} />
+              <BorderedField
+                label="6. Admitting Diagnosis"
+                style={{ height: "0.92in" }}
+              />
             </Column>
             <Column style={{ flexBasis: "32.5%" }}>
-              <BorderedField label="7. Discharge Diagnosis" style={{ height: "0.92in" }} />
+              <BorderedField
+                label="7. Discharge Diagnosis"
+                style={{ height: "0.92in" }}
+              />
             </Column>
             <Column style={{ flexBasis: "35%" }}>
-              <BorderedField label="8. a. 1st Case Rate Code" disableRightBorder small />
-              <BorderedField label="8. b. 2nd Case Rate Code" disableRightBorder small />
+              <BorderedField
+                label="8. a. 1st Case Rate Code"
+                disableRightBorder
+                small
+              />
+              <BorderedField
+                label="8. b. 2nd Case Rate Code"
+                disableRightBorder
+                small
+              />
             </Column>
           </Row>
           <Row>
-            <BorderedField small horizontal label="9. a. Date Admitted" disableRightBorder>
+            <BorderedField
+              small
+              horizontal
+              label="9. a. Date Admitted"
+              disableRightBorder
+            >
               <SegmentedDateInput />
             </BorderedField>
-            <BorderedField small horizontal label="9. b. Time Admitted" disableRightBorder>
+            <BorderedField
+              small
+              horizontal
+              label="9. b. Time Admitted"
+              disableRightBorder
+            >
               <Row style={{ alignItems: "center" }}>
                 <SegmentedTimeInput style={{ marginRight: 10 }} />
                 <CheckBoxInput label="AM" />
@@ -233,10 +286,20 @@ const ClaimForm4 = ({ values, signatures }) => (
             </BorderedField>
           </Row>
           <Row>
-            <BorderedField small horizontal label="10. a. Date Discharged" disableRightBorder>
+            <BorderedField
+              small
+              horizontal
+              label="10. a. Date Discharged"
+              disableRightBorder
+            >
               <SegmentedDateInput />
             </BorderedField>
-            <BorderedField small horizontal label="10. b. Time Discharged" disableRightBorder>
+            <BorderedField
+              small
+              horizontal
+              label="10. b. Time Discharged"
+              disableRightBorder
+            >
               <Row style={{ alignItems: "center" }}>
                 <SegmentedTimeInput style={{ marginRight: 10 }} />
                 <CheckBoxInput label="AM" />
@@ -245,16 +308,27 @@ const ClaimForm4 = ({ values, signatures }) => (
             </BorderedField>
           </Row>
         </SectionContent>
-        <SectionDividerBordered>III. REASON FOR ADMISSION</SectionDividerBordered>
+        <SectionDividerBordered>
+          III. REASON FOR ADMISSION
+        </SectionDividerBordered>
         <SectionContent>
           <Column>
-            <BorderedField disableRightBorder label="1. History of Present Illness:" style={{ height: "1.4in" }} />
+            <BorderedField
+              disableRightBorder
+              label="1. History of Present Illness:"
+              style={{ height: "1.4in" }}
+            />
             <BorderedField
               disableRightBorder
               label="2.a. Pertinent Past Medical History:"
               style={{ height: "1in", borderBottomWidth: 0 }}
             />
-            <BorderedField small disableRightBorder label="2.b. OB/GYN History" style={{ paddingBottom: 10 }}>
+            <BorderedField
+              small
+              disableRightBorder
+              label="2.b. OB/GYN History"
+              style={{ paddingBottom: 10 }}
+            >
               <Row>
                 <TextInput label="G" />
                 <TextInput label="P" />
@@ -333,11 +407,15 @@ const ClaimForm4 = ({ values, signatures }) => (
                 <CheckBoxInput>
                   <Column>
                     <Row style={{ paddingBottom: 5 }}>
-                      <Text style={{ fontWeight: 400, marginRight: 5 }}>Yes, Specify Reason</Text>
+                      <Text style={{ fontWeight: 400, marginRight: 5 }}>
+                        Yes, Specify Reason
+                      </Text>
                       <TextInput width={200} />
                     </Row>
                     <Row>
-                      <Text style={{ fontWeight: 400, marginRight: 5 }}>Name of Originating HCI</Text>
+                      <Text style={{ fontWeight: 400, marginRight: 5 }}>
+                        Name of Originating HCI
+                      </Text>
                       <TextInput width={180} />
                     </Row>
                   </Column>
@@ -360,7 +438,14 @@ const ClaimForm4 = ({ values, signatures }) => (
                     <TextInput label="Altered sensorium" width={180} />
                   </CheckBoxInput>
                 </Column>
-                <Column style={{ float: "right", borderColor: "black", borderWidth: 1, padding: 10 }}>
+                <Column
+                  style={{
+                    float: "right",
+                    borderColor: "black",
+                    borderWidth: 1,
+                    padding: 10,
+                  }}
+                >
                   <Row>
                     <TextInput label="Height:" width={50} />
                     <Text style={{ fontWeight: 400 }}>(cm)</Text>
@@ -425,7 +510,11 @@ const ClaimForm4 = ({ values, signatures }) => (
       }}
       style={styles.page}
     >
-      <SignatureField signature={signatures?.find((signature) => signature?.page === 1)?.image} />
+      <SignatureField
+        signature={
+          signatures?.find((signature) => signature?.page === 1)?.image
+        }
+      />
       <Column style={styles.body}>
         <SectionContent style={{ borderTopWidth: 1 }}>
           <BorderedField
@@ -595,7 +684,8 @@ const ClaimForm4 = ({ values, signatures }) => (
         <SectionDividerBordered>
           <Row style={{ alignItems: "center", justifyContent: "center" }}>
             <Text style={{ marginRight: 5 }}>
-              IV. COURSE IN THE WARD (Attach photocopy of laboratory/imaging results)
+              IV. COURSE IN THE WARD (Attach photocopy of laboratory/imaging
+              results)
             </Text>
             <CheckBoxInput label="Check box if there is/are additional sheet(s)." />
           </Row>
@@ -621,7 +711,9 @@ const ClaimForm4 = ({ values, signatures }) => (
               </BorderedRow>
             ))}
             <BorderedField disableRightBorder>
-              <Text style={{ fontWeight: 400 }}>SURGICAL PROCEDURE/RVS CODE (Attach photocopy of OR technique):</Text>
+              <Text style={{ fontWeight: 400 }}>
+                SURGICAL PROCEDURE/RVS CODE (Attach photocopy of OR technique):
+              </Text>
             </BorderedField>
           </Column>
         </SectionContent>
@@ -677,7 +769,9 @@ const ClaimForm4 = ({ values, signatures }) => (
             ))}
           </Column>
         </SectionContent>
-        <SectionDividerBordered>VI. OUTCOME OF TREATMENT</SectionDividerBordered>
+        <SectionDividerBordered>
+          VI. OUTCOME OF TREATMENT
+        </SectionDividerBordered>
         <SectionContent>
           <BorderedField disableRightBorder>
             <Row style={{ paddingTop: 5, paddingBottom: 3 }}>
@@ -687,21 +781,47 @@ const ClaimForm4 = ({ values, signatures }) => (
               <CheckBoxInput label="EXPIRED" />
               <CheckBoxInput label="ABSCONDED" />
               <CheckBoxInput label="TRANSFERRED" />
-              <TextInput label="Specify reason:" width={100} style={{ fontWeight: 400 }} />
+              <TextInput
+                label="Specify reason:"
+                width={100}
+                style={{ fontWeight: 400 }}
+              />
             </Row>
           </BorderedField>
         </SectionContent>
-        <SectionDividerBordered>VII. CERTIFICATION OF HEALTH CARE PROFESSIONAL</SectionDividerBordered>
+        <SectionDividerBordered>
+          VII. CERTIFICATION OF HEALTH CARE PROFESSIONAL
+        </SectionDividerBordered>
         <SectionContent style={{ fontSize: 11.52 }}>
           <BorderedField disableRightBorder style={{ fontWeight: 400 }}>
             <Column style={styles.part_five_section}>
-              <Text style={{ marginBottom: 5 }}>Certification of Attending Health Care Professional:</Text>
-              <Text style={{ fontFamily: "Source Sans", fontStyle: "italic", textAlign: "center" }}>
-                I certify that the above information given in this form, including all attachments, are true and
-                correct.
+              <Text style={{ marginBottom: 5 }}>
+                Certification of Attending Health Care Professional:
               </Text>
-              <Row style={{ justifyContent: "flex-start", alignItems: "space-between", marginTop: "0.2in" }}>
-                <Column style={{ paddingLeft: "0.5in", width: "60%", marginHorizontal: "auto" }}>
+              <Text
+                style={{
+                  fontFamily: "Source Sans",
+                  fontStyle: "italic",
+                  textAlign: "center",
+                }}
+              >
+                I certify that the above information given in this form,
+                including all attachments, are true and correct.
+              </Text>
+              <Row
+                style={{
+                  justifyContent: "flex-start",
+                  alignItems: "space-between",
+                  marginTop: "0.2in",
+                }}
+              >
+                <Column
+                  style={{
+                    paddingLeft: "0.5in",
+                    width: "60%",
+                    marginHorizontal: "auto",
+                  }}
+                >
                   <StackedBoxInput
                     upperText=""
                     lowerText="Signature over Printed Name of Attending Health Care Professional"
@@ -710,7 +830,9 @@ const ClaimForm4 = ({ values, signatures }) => (
                 </Column>
                 <Column style={{ width: "40%", alignItems: "center" }}>
                   <SegmentedDateInput />
-                  <Text style={{ fontSize: 10, textAlign: "center" }}>Date Signed</Text>
+                  <Text style={{ fontSize: 10, textAlign: "center" }}>
+                    Date Signed
+                  </Text>
                 </Column>
               </Row>
             </Column>

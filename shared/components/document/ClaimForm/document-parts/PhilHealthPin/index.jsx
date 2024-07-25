@@ -1,8 +1,8 @@
-import React from 'react';
-import BoxInput from '../../../inputs/BoxInput';
-import Row from '../../../layout/Row';
-import Dash from '../../../typography/Dash';
-import Heading1 from '../../../typography/Heading1';
+import React from "react";
+import BoxInput from "../../../inputs/BoxInput";
+import Dash from "../../../typography/Dash";
+import Heading1 from "../../../typography/Heading1";
+import Row from "../../layout/Row";
 
 function PhilHealthPinPart({ label, style }) {
   return (

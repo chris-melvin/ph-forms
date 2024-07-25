@@ -126,13 +126,7 @@ const registerArialNarrow = () => {
         src: "../../../fonts/ARIALN.TTF",
       },
       // {
-      //   src: "../../../fonts/ArchivoNarrow-VariableFont_wght.ttf",
-      // },
-      // {
-      //   src: "../../../fonts/ArialNarrowM.ttf",
-      // },
-      // {
-      //   src: "../../../fonts/ArialNarrowNew.ttf",
+      //   src: "../../../fonts/Arial Greek Regular.ttf",
       // },
       {
         fontWeight: 400,

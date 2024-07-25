@@ -1,20 +1,20 @@
-import { Text, View } from '@react-pdf/renderer';
-import React from 'react';
-import CheckBoxInput from '../../../inputs/CheckBoxInput';
-import FieldInput from '../../../inputs/FieldInput';
-import Column from '../../../layout/Column';
-import Row from '../../../layout/Row';
+import { Text, View } from "@react-pdf/renderer";
+import React from "react";
+import CheckBoxInput from "../../../inputs/CheckBoxInput";
+import FieldInput from "../../../inputs/FieldInput";
+import Row from "../../layout/Row";
+import Column from "../../layout/Column";
 
 function MemberConsentAuthorizationPart({ isPatient = false }) {
-  const title = isPatient ? 'patient' : 'member';
+  const title = isPatient ? "patient" : "member";
   const capitalisizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
   return (
     <Row>
       <Column
         style={{
           lineHeight: 0,
-          letterSpacing: '-0.3',
-          marginRight: '0.20in',
+          letterSpacing: "-0.3",
+          marginRight: "0.20in",
         }}
       >
         <Text>If member/representative is unable to write,</Text>
@@ -24,34 +24,34 @@ function MemberConsentAuthorizationPart({ isPatient = false }) {
         <Row>
           <CheckBoxInput
             isSmall
-            label={'Member'}
+            label={"Member"}
             style={{
               marginRight: 7.2,
             }}
           />
-          <CheckBoxInput isSmall label={'Representative'} />
+          <CheckBoxInput isSmall label={"Representative"} />
         </Row>
       </Column>
       <Column
         style={{
-          marginTop: '0.08in',
-          marginRight: '0.29in',
+          marginTop: "0.08in",
+          marginRight: "0.29in",
         }}
       >
         <View
           style={{
-            borderWidth: '3',
-            borderColor: '#000',
-            width: '1.20in',
-            height: '0.70in',
+            borderWidth: "3",
+            borderColor: "#000",
+            width: "1.20in",
+            height: "0.70in",
           }}
         />
       </Column>
       <Column>
         <Column
           style={{
-            marginBottom: '0.12in',
-            marginRight: '0.11in',
+            marginBottom: "0.12in",
+            marginRight: "0.11in",
           }}
         >
           <Text>Relationship of the</Text>
@@ -68,36 +68,36 @@ function MemberConsentAuthorizationPart({ isPatient = false }) {
             <CheckBoxInput
               isSmall
               style={{
-                marginRight: '0.09in',
+                marginRight: "0.09in",
               }}
-              label={'Spouse'}
+              label={"Spouse"}
             />
             <CheckBoxInput
               style={{
-                marginRight: '0.09in',
+                marginRight: "0.09in",
               }}
               isSmall
-              label={'Child'}
+              label={"Child"}
             />
-            <CheckBoxInput isSmall label={'Parent'} />
+            <CheckBoxInput isSmall label={"Parent"} />
           </Row>
           <Row>
             <CheckBoxInput
-              label={'Sibling'}
+              label={"Sibling"}
               isSmall
               style={{
-                marginTop: '0.02in',
-                marginRight: '0.12in',
+                marginTop: "0.02in",
+                marginRight: "0.12in",
               }}
             />
             <CheckBoxInput
-              label={'Others, Specify '}
+              label={"Others, Specify "}
               isSmall
               style={{
-                marginTop: '0.02in',
+                marginTop: "0.02in",
               }}
             />
-            <FieldInput width='1.04in' />
+            <FieldInput width="1.04in" />
           </Row>
         </Column>
         <Column>
@@ -105,7 +105,7 @@ function MemberConsentAuthorizationPart({ isPatient = false }) {
             <CheckBoxInput
               isSmall
               style={{
-                marginTop: '0.02in',
+                marginTop: "0.02in",
               }}
               label={`${capitalisizedTitle} is incapacitated`}
             />
@@ -113,9 +113,9 @@ function MemberConsentAuthorizationPart({ isPatient = false }) {
           <Row>
             <CheckBoxInput
               isSmall
-              label={'Other reasons: '}
+              label={"Other reasons: "}
               style={{
-                marginTop: '0.02in',
+                marginTop: "0.02in",
               }}
             />
             <FieldInput width={121} />
