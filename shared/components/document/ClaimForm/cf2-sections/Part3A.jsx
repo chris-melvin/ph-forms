@@ -6,19 +6,27 @@ import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import Heading1 from "../../typography/Heading1";
 import FieldInput from "../inputs/FieldInput";
 
-const styles = StyleSheet.create({
+const ComponentStyles = StyleSheet.create({
   rowStyle: {
     borderTopWidth: 1,
     width: "100%",
   },
-  columnContainer: {},
+  columnContainer: {
+    fontFamily: "Source Sans",
+    fontWeight: "light",
+    fontSize: "7.64px",
+  },
   tableColumn: {
     borderRightWidth: 1,
   },
   tableContainer: {
     width: "7in",
-    borderWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
     marginHorizontal: "auto",
+  },
+  tableHeader: {
+    borderTopWidth: 1,
   },
 
   cell: {
@@ -49,15 +57,45 @@ const styles = StyleSheet.create({
   col5: {
     width: "1.95in",
   },
+  textFields: {
+    alignItems: "center",
+  },
+  row: {
+    marginBottom: ".07in",
+  },
+  CheckBoxContainer: {
+    marginLeft: ".2in",
+  },
+  cellText: {
+    marginLeft: ".07in",
+    marginTop: ".07in",
+    marginBottom: ".05in",
+  },
+  tableLabel: { marginLeft: ".50in", marginBottom: ".03in" },
+
+  checkBoxCell: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  tableCellText: {
+    marginLeft: ".07in",
+    marginTop: ".05in",
+    marginBottom: ".05in",
+  },
+  tableCellHeader: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 export const Part3A = () => {
   return (
-    <Column style={styles.columnContainer}>
-      <Row>
+    <Column style={ComponentStyles.columnContainer}>
+      <Row style={[ComponentStyles.row, { marginTop: ".07in" }]}>
         <Heading1>A.CERTIFICATION OF CONSUMPTION OF BENEFITS:</Heading1>
       </Row>
-      <Row>
+      <Row style={[ComponentStyles.row, ComponentStyles.CheckBoxContainer]}>
         <CheckBoxInput isSmall={false} customHeight=".2in" customWidth=".2in" />
         <View>
           <Text>PhilHealth benefit is enough to cover HCI and PF Charges.</Text>
@@ -68,12 +106,19 @@ export const Part3A = () => {
         </View>
       </Row>
 
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.tableColumn, { width: "50%" }]}>
+      <Row
+        style={[ComponentStyles.tableContainer, ComponentStyles.tableHeader]}
+      >
+        <Column style={[ComponentStyles.tableColumn, { width: "4.2in" }]}>
           <Text></Text>
         </Column>
-        <Column style={[styles.tableColumn, { width: "50%" }]}>
-          <Text>Total Actual Charges*</Text>
+        <Column
+          style={[
+            ComponentStyles.tableColumn,
+            { width: "4.2in", alignItems: "center" },
+          ]}
+        >
+          <Text style={[ComponentStyles.cellText]}>Total Actual Charges*</Text>
         </Column>
       </Row>
       {[
@@ -81,17 +126,17 @@ export const Part3A = () => {
         "Total Professional Fees",
         "Grand Total",
       ].map((item, index) => (
-        <Row style={styles.tableContainer}>
-          <Column style={[styles.tableColumn, { width: "50%" }]}>
-            <Text>{item}</Text>
+        <Row style={ComponentStyles.tableContainer}>
+          <Column style={[ComponentStyles.tableColumn, { width: "50%" }]}>
+            <Text style={[ComponentStyles.cellText]}>{item}</Text>
           </Column>
-          <Column style={[styles.tableColumn, { width: "50%" }]}>
+          <Column style={[ComponentStyles.tableColumn, { width: "50%" }]}>
             <Text></Text>
           </Column>
         </Row>
       ))}
 
-      <Row>
+      <Row style={[ComponentStyles.row, ComponentStyles.CheckBoxContainer]}>
         <CheckBoxInput isSmall={false} customHeight=".2in" customWidth=".2in" />
         <View>
           <Text>
@@ -107,50 +152,131 @@ export const Part3A = () => {
       </Row>
 
       <Row>
-        <Text>a.) The total co-pay for the following are:</Text>
+        <Text style={[ComponentStyles.tableLabel]}>
+          a.) The total co-pay for the following are:
+        </Text>
       </Row>
 
       {/* Table */}
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.col1, styles.row1, styles.cell]}></Column>
-        <Column style={[styles.col2, styles.row1, styles.cell]}>
+      <Row
+        style={[ComponentStyles.tableContainer, ComponentStyles.tableHeader]}
+      >
+        <Column
+          style={[
+            ComponentStyles.col1,
+            ComponentStyles.row1,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col2,
+            ComponentStyles.row1,
+            ComponentStyles.cell,
+            ComponentStyles.tableCellHeader,
+          ]}
+        >
           <Text>Total Actual Charges*</Text>
         </Column>
-        <Column style={[styles.col3, styles.row1, styles.cell]}>
+        <Column
+          style={[
+            ComponentStyles.col3,
+            ComponentStyles.row1,
+            ComponentStyles.cell,
+            ComponentStyles.tableCellHeader,
+            {
+              textAlign: "center",
+            },
+          ]}
+        >
           <Text>
             Amount after Application of Discount (i.e., personal discount,
             Senior Citizen/PWD)
           </Text>
         </Column>
-        <Column style={[styles.col4, styles.row1, styles.cell]}>
+        <Column
+          style={[
+            ComponentStyles.col4,
+            ComponentStyles.row1,
+            ComponentStyles.cell,
+            ComponentStyles.tableCellHeader,
+          ]}
+        >
           <Text>PhilHealth Benefit</Text>
         </Column>
-        <Column style={[styles.col5, styles.row1, styles.cell]}>
+        <Column
+          style={[
+            ComponentStyles.col5,
+            ComponentStyles.row1,
+            ComponentStyles.cell,
+            ComponentStyles.tableCellHeader,
+          ]}
+        >
           <Text>Amount after PhilHealth Deduction</Text>
         </Column>
       </Row>
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.col1, styles.row2, styles.cell]}>
-          <Text>Total Health Care Institution Fees</Text>
+      <Row style={[ComponentStyles.tableContainer]}>
+        <Column
+          style={[
+            ComponentStyles.col1,
+            ComponentStyles.row2,
+            ComponentStyles.cell,
+            { justifyContent: "center", paddingLeft: ".05in" },
+          ]}
+          debug
+        >
+          <Text>Total Health </Text>
+          <Text>Care Institution Fees</Text>
         </Column>
-        <Column style={[styles.col2, styles.row2, styles.cell]}></Column>
-        <Column style={[styles.col3, styles.row2, styles.cell]}></Column>
-        <Column style={[styles.col4, styles.row2, styles.cell]}></Column>
-        <Column style={[styles.col5, styles.row2, styles.cell]}>
-          <FieldInput label="Amount P" width="1.25in" />
+        <Column
+          style={[
+            ComponentStyles.col2,
+            ComponentStyles.row2,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col3,
+            ComponentStyles.row2,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col4,
+            ComponentStyles.row2,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col5,
+            ComponentStyles.row2,
+            ComponentStyles.cell,
+            { padding: ".07in" },
+          ]}
+        >
+          <Row>
+            <Text>Amout P</Text>
+
+            <FieldInput width="1.25in" />
+          </Row>
           <Text>Paid by (check all that applies):</Text>
-          <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
-            label="Member/Patient"
-          />
-          <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
-            label="HMO"
-          />
+          <Row>
+            <CheckBoxInput
+              isSmall={true}
+              customHeight=".2in"
+              customWidth=".2in"
+              label="Member/Patient"
+            />
+            <CheckBoxInput
+              isSmall={true}
+              customHeight=".2in"
+              customWidth=".2in"
+              label="HMO"
+            />
+          </Row>
           <CheckBoxInput
             isSmall={true}
             customHeight=".2in"
@@ -159,31 +285,71 @@ export const Part3A = () => {
           />
         </Column>
       </Row>
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.col1, styles.row3, styles.cell]}>
-          <Text>
-            Total Professional Fees (for accredited and non-accredited
-            professionals)
-          </Text>
+      <Row style={[ComponentStyles.tableContainer]}>
+        <Column
+          style={[
+            ComponentStyles.col1,
+            ComponentStyles.row3,
+            ComponentStyles.cell,
+            { justifyContent: "center", paddingLeft: ".05in" },
+          ]}
+        >
+          <Text>Total Professional</Text>
+          <Text>Fees (for accredited </Text>
+          <Text>and non-accredited </Text>
+          <Text>professionals)</Text>
         </Column>
-        <Column style={[styles.col2, styles.row3, styles.cell]}></Column>
-        <Column style={[styles.col3, styles.row3, styles.cell]}></Column>
-        <Column style={[styles.col4, styles.row3, styles.cell]}></Column>
-        <Column style={[styles.col5, styles.row3, styles.cell]}>
-          <FieldInput label="Amount P" width="1.25in" />
+        <Column
+          style={[
+            ComponentStyles.col2,
+            ComponentStyles.row3,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col3,
+            ComponentStyles.row3,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col4,
+            ComponentStyles.row3,
+            ComponentStyles.cell,
+          ]}
+        ></Column>
+        <Column
+          style={[
+            ComponentStyles.col5,
+            ComponentStyles.row3,
+            ComponentStyles.cell,
+            {
+              padding: ".07in",
+            },
+          ]}
+        >
+          <Row>
+            <Text>Amout P</Text>
+
+            <FieldInput width="1.25in" />
+          </Row>
           <Text>Paid by (check all that applies):</Text>
-          <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
-            label="Member/Patient"
-          />
-          <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
-            label="HMO"
-          />
+          <Row>
+            <CheckBoxInput
+              isSmall={true}
+              customHeight=".2in"
+              customWidth=".2in"
+              label="Member/Patient"
+            />
+            <CheckBoxInput
+              isSmall={true}
+              customHeight=".2in"
+              customWidth=".2in"
+              label="HMO"
+            />
+          </Row>
           <CheckBoxInput
             isSmall={true}
             customHeight=".2in"
@@ -194,21 +360,33 @@ export const Part3A = () => {
       </Row>
 
       <Row>
-        <Text>
-          b.) Purchases/Expenses NOT included in the Health Care Institution
-          Charges
+        <Text style={[ComponentStyles.tableLabel]}>
+          b.) Purchases/Expenses{" "}
+          <Text style={{ fontWeight: "bold", fontFamily: "Source Sans" }}>
+            NOT
+          </Text>{" "}
+          included in the Health Care Institution Charges
         </Text>
       </Row>
 
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.cell, { width: "4.11in" }]}>
-          <Text>
+      <Row
+        style={[ComponentStyles.tableContainer, ComponentStyles.tableHeader]}
+      >
+        <Column style={[ComponentStyles.cell, { width: "4.11in" }]}>
+          <Text style={[ComponentStyles.tableCellText]}>
             Total cost of purchase/s for drugs/medicines and/or medical supplies
             bought by the patient/member within/outside the HCI during
             confinement
           </Text>
         </Column>
-        <Column style={{ width: "2.89in" }}>
+        <Column
+          style={[
+            ComponentStyles.cell,
+            ComponentStyles.checkBoxCell,
+            ,
+            { width: "2.89in", paddingLeft: ".07in" },
+          ]}
+        >
           <CheckBoxInput
             isSmall={true}
             customHeight=".2in"
@@ -221,18 +399,24 @@ export const Part3A = () => {
             customWidth=".2in"
             label="Total Amount"
           />
-          <FieldInput label="Amount P" width="1.25in" />
+          <Text>P</Text> <FieldInput width="1in" />
         </Column>
       </Row>
-      <Row style={[styles.tableContainer]}>
-        <Column style={[styles.cell, { width: "4.11in" }]}>
-          <Text>
+      <Row style={[ComponentStyles.tableContainer]}>
+        <Column style={[ComponentStyles.cell, { width: "4.11in" }]}>
+          <Text style={[ComponentStyles.tableCellText]}>
             Total cost of purchase/s for drugs/medicines and/or medical supplies
             bought by the patient/member within/outside the HCI during
             confinement
           </Text>
         </Column>
-        <Column style={[{ width: "2.89in" }]}>
+        <Column
+          style={[
+            ComponentStyles.cell,
+            ComponentStyles.checkBoxCell,
+            { width: "2.89in", paddingLeft: ".07in" },
+          ]}
+        >
           <CheckBoxInput
             isSmall={true}
             customHeight=".2in"
@@ -245,8 +429,18 @@ export const Part3A = () => {
             customWidth=".2in"
             label="Total Amount"
           />
-          <FieldInput label="Amount P" width="1.25in" />
+          <Text>P</Text> <FieldInput width="1in" />
         </Column>
+      </Row>
+      <Row>
+        <Text
+          style={[
+            { marginLeft: ".52in", marginBottom: ".1in", marginTop: ".07" },
+          ]}
+        >
+          * NOTE: Total Actual Charges should be based on Statement of Account
+          (SOA)
+        </Text>
       </Row>
     </Column>
   );
