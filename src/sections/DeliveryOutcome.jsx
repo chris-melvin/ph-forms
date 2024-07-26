@@ -45,7 +45,7 @@ export const DeliveryOutcome = () => {
       {/* 8 */}
       <Row
         style={{
-          marginBottom: ".1in",
+          marginBottom: ".20in",
           paddingLeft: ".25in",
           paddingRight: ".1in",
           ...styles.text,
@@ -61,6 +61,7 @@ export const DeliveryOutcome = () => {
             fontSize="6.24px"
             label="Date"
             style={{ paddingTop: 0 }}
+            boxWidth=".12in"
           />
         </View>
         <Row style={{ alignItems: "flex-start" }}>
@@ -79,6 +80,10 @@ export const DeliveryOutcome = () => {
           >
             <TimeInput
               rightLabel="AM"
+              rightLabelStyle={{
+                fontFamily: "Arial Narrow",
+                fontSize: "7.04px",
+              }}
               style={{ marginRight: ".15in" }}
               width=".25in"
               bottomLabelFontSize="6.24px"
@@ -86,6 +91,10 @@ export const DeliveryOutcome = () => {
             />
             <TimeInput
               rightLabel="PM"
+              rightLabelStyle={{
+                fontFamily: "Arial Narrow",
+                fontSize: "7.04px",
+              }}
               width=".25in"
               bottomLabelFontSize="6.24px"
               bottomLabelFontStyle="italic"
@@ -214,7 +223,7 @@ export const DeliveryOutcome = () => {
           ...styles.text,
         }}
       >
-        <View style={{ marginRight: ".92in" }}>
+        <View style={{ marginRight: ".87in" }}>
           <Text>
             <Text style={{ color: "#f00" }}>11. </Text> Scheduled Postpartum
             follow-up consultation 1 week after delivery
@@ -243,8 +252,9 @@ export const DeliveryOutcome = () => {
             Discharge
           </Text>
         </View>
-        <View style={{ marginRight: ".3in" }}>
+        <View style={{ marginRight: ".45in" }}>
           <SegmentedDate
+            label="Date"
             fontSize="6.24px"
             boxWidth=".12in"
             style={{ paddingTop: 0 }}
@@ -266,6 +276,10 @@ export const DeliveryOutcome = () => {
           >
             <TimeInput
               rightLabel="AM"
+              rightLabelStyle={{
+                fontFamily: "Arial Narrow",
+                fontSize: "7.04px",
+              }}
               style={{ marginRight: ".15in" }}
               width=".25in"
               bottomLabelFontSize="6.24px"
@@ -273,6 +287,10 @@ export const DeliveryOutcome = () => {
             />
             <TimeInput
               rightLabel="PM"
+              rightLabelStyle={{
+                fontFamily: "Arial Narrow",
+                fontSize: "7.04px",
+              }}
               width=".25in"
               bottomLabelFontSize="6.24px"
               bottomLabelFontStyle="italic"

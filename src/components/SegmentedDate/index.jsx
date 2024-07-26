@@ -9,8 +9,8 @@ import Column from "../../../shared/components/document/ClaimForm/layout/Column"
 const styles = StyleSheet.create({
   label: {
     alignSelf: "center",
-    fontFamily: "Arial Narrow",
-    fontStyle: "italic",
+    // fontFamily: "Arial Narrow",
+    // fontStyle: "italic",
   },
 });
 
@@ -25,6 +25,9 @@ const SegmentedDate = ({
   fontSize = "8.04px",
   inputSpace = ".04in",
   labelMarginTop,
+  leftLabelStyle = { fontFamily: "Arial Narrow" },
+  fieldLabelStyle,
+  dateLabel = ["Month", "Day", "Year"],
 }) => (
   <Row
     style={[
@@ -35,11 +38,7 @@ const SegmentedDate = ({
     ]}
     debug={debug}
   >
-    {label ? (
-      <Text style={{ fontFamily: "Arial Narrow" }}>{label}</Text>
-    ) : (
-      <></>
-    )}
+    {label ? <Text style={leftLabelStyle}>{label}</Text> : <></>}
     <Column
       style={{
         marginLeft: dateMarginLeft,
@@ -56,9 +55,10 @@ const SegmentedDate = ({
         style={[
           styles.label,
           { fontSize: fontSize, marginTop: labelMarginTop },
+          fieldLabelStyle,
         ]}
       >
-        Month
+        {dateLabel[0]}
       </Text>
     </Column>
     <Dash height={outerHeight} />
@@ -78,9 +78,10 @@ const SegmentedDate = ({
         style={[
           styles.label,
           { fontSize: fontSize, marginTop: labelMarginTop },
+          fieldLabelStyle,
         ]}
       >
-        Day
+        {dateLabel[1]}
       </Text>
     </Column>
     <Dash height={outerHeight} />
@@ -100,9 +101,10 @@ const SegmentedDate = ({
         style={[
           styles.label,
           { fontSize: fontSize, marginTop: labelMarginTop },
+          fieldLabelStyle,
         ]}
       >
-        Year
+        {dateLabel[2]}
       </Text>
     </Column>
   </Row>

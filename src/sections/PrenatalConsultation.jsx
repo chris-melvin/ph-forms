@@ -22,6 +22,7 @@ export const PrenatalConsultation = () => {
       flexDirection: "row",
       justifyContent: "space-between",
     },
+    commaStyle: { fontSize: "9.36px", transform: "translate(0,2)" },
   });
   return (
     <>
@@ -81,14 +82,14 @@ export const PrenatalConsultation = () => {
               style={[
                 styles.flexRowSpaceBetween,
                 {
-                  marginBottom: ".16in",
+                  marginBottom: ".12in",
                 },
               ]}
             >
               <View>
                 <Text>
-                  <Text style={{ color: "#f00" }}>a.</Text> Vital signs are
-                  normal
+                  <Text style={{ color: "#f00" }}>a.{"  "}</Text>
+                  Vital signs are normal
                 </Text>
               </View>
               <View>
@@ -102,7 +103,7 @@ export const PrenatalConsultation = () => {
             <View style={[styles.flexRowSpaceBetween]}>
               <View>
                 <Text>
-                  <Text style={{ color: "#f00" }}>b.</Text> Ascertain the
+                  <Text style={{ color: "#f00" }}>b{"  "}</Text> Ascertain the
                   present Pregnancy is low-Risk
                 </Text>
               </View>
@@ -121,7 +122,8 @@ export const PrenatalConsultation = () => {
             >
               <View style={{ marginRight: ".15in" }}>
                 <Text>
-                  <Text style={{ color: "#f00" }}>c.</Text> Menstrual History
+                  <Text style={{ color: "#f00" }}>c.{"  "}</Text> Menstrual
+                  History
                 </Text>
               </View>
               <View style={{ display: "flex", flexDirection: "row" }}>
@@ -154,8 +156,8 @@ export const PrenatalConsultation = () => {
               <View>
                 <Text style={{ marginRight: ".2in" }}>
                   <Text style={{ color: "#f00", fontFamily: "Arial Narrow" }}>
-                    d.
-                  </Text>{" "}
+                    d.{"  "}
+                  </Text>
                   Obstetric History
                 </Text>
               </View>
@@ -186,19 +188,19 @@ export const PrenatalConsultation = () => {
                   lowerText="T"
                   style={{ paddingTop: ".1in" }}
                 />
-                <Text>,</Text>
+                <Text style={styles.commaStyle}>,</Text>
                 <StackedBoxInput
                   boxWidth=".24in"
                   lowerText="P"
                   style={{ paddingTop: ".1in" }}
                 />
-                <Text>,</Text>
+                <Text style={styles.commaStyle}>,</Text>
                 <StackedBoxInput
                   boxWidth=".24in"
                   lowerText="A"
                   style={{ paddingTop: ".1in" }}
                 />
-                <Text>,</Text>
+                <Text style={styles.commaStyle}>,</Text>
                 <StackedBoxInput
                   boxWidth=".24in"
                   lowerText="L"
@@ -410,7 +412,7 @@ export const PrenatalConsultation = () => {
       >
         <View>
           <Text>
-            <Text style={{ color: "#f00", marginBottom: ".1in" }}>7.</Text>
+            <Text style={{ color: "#f00", marginBottom: ".07in" }}>7.</Text>
             Follow-up Prenatal Consultation
           </Text>
         </View>
@@ -427,7 +429,8 @@ export const PrenatalConsultation = () => {
       >
         <View>
           <Text>
-            <Text style={{ color: "#f00" }}>a. </Text>Prenatal Consultation No.
+            <Text style={{ color: "#f00" }}>a. </Text>
+            Prenatal Consultation No.
           </Text>
         </View>
         <View style={{ display: "flex", flexDirection: "row" }}>
@@ -439,11 +442,10 @@ export const PrenatalConsultation = () => {
                 height: ".165in",
                 width: ".32in",
                 paddingTop: ".01in",
-                paddingLeft: ".075in",
                 marginLeft: ".23in",
               }}
             >
-              <Text style={{ fontSize: "7.8px" }}>
+              <Text style={{ fontSize: "7.8px", marginHorizontal: "auto" }}>
                 {item + 2}
                 {item + 2 === 1
                   ? "st"

@@ -3,9 +3,9 @@ import React from "react";
 const styles = StyleSheet.create({
   square: {
     height: 6,
-    borderBottomWidth: 0.8,
+    borderBottomWidth: 1,
     borderLeftWidth: 0,
-    borderRightWidth: 0.8,
+    borderRightWidth: 1,
     borderColor: "#000",
     boxSizing: "border-box",
   },

@@ -17,25 +17,6 @@ export const SignatureSection = () => {
     page: {
       flexDirection: "row",
     },
-    body: {
-      height: "100%",
-      width: "100%",
-      maxHeight: "100%",
-      fontSize: "8.64px",
-      paddingHorizontal: ".25in",
-      paddingVertical: ".15in",
-      boxSizing: "border-box",
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      flexGrow: 1,
-    },
-    logo: {
-      width: "2.41in",
-      height: "1.1in",
-      paddingVertical: ".10in",
-    },
     text: {
       fontFamily: "Arial Narrow",
       fontStretch: "condensed",
@@ -48,7 +29,7 @@ export const SignatureSection = () => {
         marginLeft: ".25in",
         marginRight: ".1in",
         marginTop: ".1in",
-        paddingBottom: ".2in",
+        paddingBottom: ".15in",
         marginBottom: "1.5in",
       }}
     >
@@ -75,6 +56,7 @@ export const SignatureSection = () => {
           display: "flex",
           alignItems: "flex-end",
           marginLeft: ".12in",
+          marginTop: ".1in",
           ...styles.text,
         }}
       >
