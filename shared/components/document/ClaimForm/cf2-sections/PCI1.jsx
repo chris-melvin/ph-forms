@@ -5,12 +5,26 @@ import Heading1 from "../../typography/Heading1";
 import FieldInput from "../inputs/FieldInput";
 import CheckBoxInput from "../inputs/CheckBoxInput";
 import AddressInput from "../inputs/AddressInput";
-import SegmentedDateInput from "../inputs/SegmentedDateInput";
 import SegmentedTimeInput from "../inputs/SegmentedTimeInput";
-import { Text } from "@react-pdf/renderer";
+import { StyleSheet, Text } from "@react-pdf/renderer";
+import { styles } from "../forms/ClaimForm2";
+import SegmentedDate from "../../../../../src/components/SegmentedDate";
+import TimeInput from "../inputs/TimeInput";
+
+const ComponentStyles = StyleSheet.create({
+  textFields: {
+    alignItems: "center",
+  },
+});
 
 // Patient Confinement Information 1 - 1 to 5
 export const PCI1 = () => {
+  const INPUT_CONSTANTS = {
+    innerHeight: ".06in",
+    outerHeight: ".06in",
+    width: ".17in",
+  };
+
   return (
     <Row
       style={{
@@ -34,24 +48,31 @@ export const PCI1 = () => {
           <Row>
             <FieldInput
               label={"Last Name"}
-              style={{ marginRight: "0.16in" }}
+              style={[ComponentStyles.textFields, { marginRight: "0.16in" }]}
+              labelStyle={styles.bodyText}
               width="1.50in"
             />
             <FieldInput
               label={"First Name"}
-              style={{ marginRight: "0.12in" }}
+              style={[ComponentStyles.textFields, { marginRight: "0.12in" }]}
+              labelStyle={styles.bodyText}
               width="1.66in"
             />
             <FieldInput
               label={"Name Extension"}
-              style={{ marginRight: "0.16in" }}
+              style={[ComponentStyles.textFields, { marginRight: "0.16in" }]}
+              labelStyle={styles.bodyText}
               width="1.12in"
               description={"(JR/SR/III)"}
+              descriptionStyle={styles.bodyText}
             />
             <FieldInput
               label={"Middle Name"}
+              style={[ComponentStyles.textFields]}
+              labelStyle={styles.bodyText}
               width="1.59in"
               description={"(ex: DELA CRUZ JUAN JR SIPAG)"}
+              descriptionStyle={styles.bodyText}
             />
           </Row>
         </Row>
@@ -69,7 +90,6 @@ export const PCI1 = () => {
             style={{
               marginRight: "0.11in",
             }}
-            debug
           />
           <CheckBoxInput
             isSmall
@@ -81,11 +101,13 @@ export const PCI1 = () => {
           <FieldInput
             label={"Name of referring Health Care Institution"}
             width="2.06in"
-            style={{
-              marginRight: "0.18in",
-            }}
+            style={[ComponentStyles.textFields, { marginRight: "0.18in" }]}
+            labelStyle={styles.bodyText}
           />
-          <AddressInput />
+          <AddressInput
+            style={ComponentStyles.textFields}
+            labelStyle={styles.bodyText}
+          />
         </Row>
         <Row>
           <Heading1
@@ -96,19 +118,23 @@ export const PCI1 = () => {
             3. Confinement Period:
           </Heading1>
           <Column>
-            <Row>
-              <SegmentedDateInput
+            <Row style={[styles.alignItemsEnd]}>
+              <SegmentedDate
                 label={"a. Date Admitted"}
+                innerHeight={INPUT_CONSTANTS.innerHeight}
+                outerHeight={INPUT_CONSTANTS.outerHeight}
+                boxWidth={INPUT_CONSTANTS.width}
                 style={{
                   marginRight: "0.23in",
                 }}
               />
-              <SegmentedTimeInput
+              <TimeInput
                 label={"b. Time Admitted"}
                 style={{
                   marginRight: "0.23in",
                 }}
               />
+
               <CheckBoxInput
                 label={"AM"}
                 isSmall
@@ -124,14 +150,17 @@ export const PCI1 = () => {
                 }}
               />
             </Row>
-            <Row>
-              <SegmentedDateInput
+            <Row style={[styles.alignItemsEnd]}>
+              <SegmentedDate
                 label={"c. Date Discharge"}
+                innerHeight={INPUT_CONSTANTS.innerHeight}
+                outerHeight={INPUT_CONSTANTS.outerHeight}
+                boxWidth={INPUT_CONSTANTS.width}
                 style={{
                   marginRight: "0.20in",
                 }}
               />
-              <SegmentedTimeInput
+              <TimeInput
                 label={"d. Time Discharge"}
                 style={{
                   marginRight: "0.23in",
@@ -163,7 +192,7 @@ export const PCI1 = () => {
             marginLeft: "0.13in",
           }}
         >
-          <Row>
+          <Row style={[styles.alignItemsEnd]}>
             <CheckBoxInput
               label={"a. Improved"}
               boxMarginRight="0.22in"
@@ -180,12 +209,15 @@ export const PCI1 = () => {
                 marginRight: "0.19in",
               }}
             />
-            <SegmentedDateInput
+            <SegmentedDate
               style={{
                 marginRight: "0.20in",
               }}
+              innerHeight={INPUT_CONSTANTS.innerHeight}
+              outerHeight={INPUT_CONSTANTS.outerHeight}
+              boxWidth={INPUT_CONSTANTS.width}
             />
-            <SegmentedTimeInput
+            <TimeInput
               label={"Time: "}
               style={{
                 marginRight: "0.24in",
@@ -223,7 +255,13 @@ export const PCI1 = () => {
                 marginRight: "0.08in",
               }}
             />
-            <FieldInput width="4.0in" debug />
+            <FieldInput
+              width="4.0in"
+              label="Name of Referral Health Care Institution
+"
+              style={[ComponentStyles.textFields]}
+              labelStyle={styles.bodyText}
+            />
           </Row>
           <Row>
             <CheckBoxInput
@@ -234,7 +272,10 @@ export const PCI1 = () => {
                 marginRight: "0.90in",
               }}
             />
-            <AddressInput />
+            <AddressInput
+              style={ComponentStyles.textFields}
+              labelStyle={styles.bodyText}
+            />
           </Row>
           <Row>
             <CheckBoxInput
@@ -245,14 +286,10 @@ export const PCI1 = () => {
                 marginRight: "1.67in",
               }}
             />
-            <Text
-              style={{
-                marginRight: "0.08in",
-              }}
-            >
+            <Text style={[styles.bodyText, { marginRight: "0.18in" }]}>
               Reason/s for referral/transfer:
             </Text>
-            <FieldInput width="3.63in" debug />
+            <FieldInput width="3.63in" />
           </Row>
         </Column>
         <Row>
