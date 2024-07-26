@@ -5,6 +5,7 @@ import Heading1 from "../../typography/Heading1";
 import StackedLines from "../inputs/StackedLines";
 import { Text } from "@react-pdf/renderer";
 import CheckBoxInput from "../inputs/CheckBoxInput";
+import { styles } from "../forms/ClaimForm2";
 
 // Patient Confinement Information 2 - 6 to 7
 export const PCI2 = () => {
@@ -13,6 +14,7 @@ export const PCI2 = () => {
       <Row
         style={{
           borderBottom: "1.5 #000 solid",
+          height: ".51in",
         }}
       >
         <Column
@@ -28,6 +30,7 @@ export const PCI2 = () => {
       <Row
         style={{
           borderBottom: "1.5 #000 solid",
+          height: "1.56in",
         }}
       >
         <Column
@@ -48,7 +51,9 @@ export const PCI2 = () => {
             >
               7. Discharge Diagnosis/es
             </Heading1>
-            <Text>(Use additional CF2 if necessary):</Text>
+            <Text style={[styles.bodyText]}>
+              (Use additional CF2 if necessary):
+            </Text>
           </Row>
           <Row
             style={{
@@ -61,17 +66,23 @@ export const PCI2 = () => {
               }}
             >
               <Text
-                style={{
-                  marginLeft: "0.29in",
-                }}
+                style={[
+                  styles.bodyText,
+                  {
+                    marginLeft: "0.29in",
+                  },
+                ]}
               >
                 Diagnosis
               </Text>
               <Row>
                 <Column
-                  style={{
-                    marginRight: "0.09in",
-                  }}
+                  style={[
+                    styles.bodyText,
+                    {
+                      marginRight: "0.09in",
+                    },
+                  ]}
                 >
                   <Text style={{ marginBottom: "0.25in" }}>a.</Text>
                   <Text>b.</Text>
@@ -82,9 +93,12 @@ export const PCI2 = () => {
               </Row>
             </Column>
             <Column
-              style={{
-                marginRight: "0.17in",
-              }}
+              style={[
+                styles.bodyText,
+                {
+                  marginRight: "0.09in",
+                },
+              ]}
             >
               <Text
                 style={{
@@ -96,9 +110,12 @@ export const PCI2 = () => {
               <StackedLines numLines={6} />
             </Column>
             <Column
-              style={{
-                marginRight: "0.17in",
-              }}
+              style={[
+                styles.bodyText,
+                {
+                  marginRight: "0.17in",
+                },
+              ]}
             >
               <Text style={{}}>
                 Related Procedure/s (if there’s any) RVS Code
@@ -121,11 +138,7 @@ export const PCI2 = () => {
                 </Column>
               </Row>
             </Column>
-            <Column
-              style={{
-                marginRight: "0.17in",
-              }}
-            >
+            <Column style={[styles.bodyText, { marginRight: "0.17in" }]}>
               <Text
                 style={{
                   alignSelf: "center",
@@ -138,9 +151,12 @@ export const PCI2 = () => {
               </Column>
             </Column>
             <Column
-              style={{
-                marginRight: "0.21in",
-              }}
+              style={[
+                styles.bodyText,
+                {
+                  marginRight: "0.21in",
+                },
+              ]}
             >
               <Text
                 style={{
@@ -155,9 +171,12 @@ export const PCI2 = () => {
             </Column>
             <Column>
               <Text
-                style={{
-                  alignSelf: "center",
-                }}
+                style={[
+                  styles.bodyText,
+                  {
+                    alignSelf: "center",
+                  },
+                ]}
               >
                 Laterality (check applicable box)
               </Text>
