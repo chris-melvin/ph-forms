@@ -2,14 +2,26 @@ import React from "react";
 import Column from "../layout/Column";
 import Row from "../layout/Row";
 import Heading1 from "../../typography/Heading1";
-import SegmentedLineInput from "../inputs/SegmentedLineInput";
 import FieldInput from "../inputs/FieldInput";
 import { styles } from "../forms/ClaimForm2";
+import SegmentedLineInput from "../../../../../src/components/SegmentedLineInput";
+import { StyleSheet } from "@react-pdf/renderer";
+
+const HeaderStyles = StyleSheet.create({
+  fields: {
+    marginBottom: ".05in",
+  },
+});
 
 export const HCIinfo = () => {
   return (
     <Column style={styles.part_one_section}>
-      <Row>
+      <Row
+        style={[
+          HeaderStyles.fields,
+          { marginTop: ".05in", alignItems: "flex-end" },
+        ]}
+      >
         <Heading1
           style={{
             marginRight: "0.20in",
@@ -17,9 +29,9 @@ export const HCIinfo = () => {
         >
           1. PhilHealth Accreditation Number (PAN) of Health Care Institution:
         </Heading1>
-        <SegmentedLineInput number={9} />
+        <SegmentedLineInput number={9} outerHeight=".08in" />
       </Row>
-      <Row>
+      <Row style={[HeaderStyles.fields]}>
         <Heading1
           style={{
             marginRight: "0.04in",
@@ -29,13 +41,7 @@ export const HCIinfo = () => {
         </Heading1>
         <FieldInput width="5.60in" />
       </Row>
-      <Row
-        style={
-          {
-            // marginBottom: '0.11in',
-          }
-        }
-      >
+      <Row style={[HeaderStyles.fields]}>
         <Heading1
           style={{
             marginRight: "0.19in",
@@ -46,18 +52,30 @@ export const HCIinfo = () => {
         <FieldInput
           style={{
             marginRight: "0.15in",
+            alignItems: "center",
           }}
           width="2.86in"
           label="Building Number and Street Name"
+          labelStyle={{ fontWeight: "light" }}
         />
         <FieldInput
           style={{
             marginRight: "0.15in",
+            alignItems: "center",
           }}
           width="2in"
           label="City/Municipality"
+          labelStyle={{ fontWeight: "light" }}
         />
-        <FieldInput width="1.73in" label="Province" />
+        <FieldInput
+          style={{
+            marginRight: "0.15in",
+            alignItems: "center",
+          }}
+          width="1.73in"
+          label="Province"
+          labelStyle={{ fontWeight: "light" }}
+        />
       </Row>
     </Column>
   );
