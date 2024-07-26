@@ -9,9 +9,10 @@ import SegmentedDate from "../../../../../src/components/SegmentedDate";
 import SegmentedLineInput from "../../../../../src/components/SegmentedLineInput";
 import Dash from "../../../../../src/components/Dash";
 import CheckBoxInput from "../../inputs/CheckBoxInput";
+import { styles } from "../forms/ClaimForm2";
 
 export const AccreditationNumber = () => {
-  const styles = StyleSheet.create({
+  const ComponentStyles = StyleSheet.create({
     rowStyle: {
       borderTopWidth: 1,
       width: "100%",
@@ -22,6 +23,14 @@ export const AccreditationNumber = () => {
       borderBottomWidth: 1,
       height: ".93in",
     },
+    textFields: {
+      alignItems: "center",
+    },
+    tableHeader: {
+      borderBottomWidth: 1,
+      borderRightWidth: 1,
+      justifyContent: "center",
+    },
   });
   return (
     <Row style={{ fontSize: "8.76px" }}>
@@ -30,19 +39,36 @@ export const AccreditationNumber = () => {
           10.Accreditation Number/Name of Accredited Health Care
           Professional/Date Signed and Professional Fees/Charges
         </Heading1>
-        <Text>(Use additional CF2 if necessary):</Text>
-        <Row style={styles.rowStyle}>
-          <Column style={{ width: "50%" }}>
-            <Row style={{ borderBottomWidth: 1, borderRightWidth: 1 }}>
+        <Text
+          style={[
+            styles.bodyText,
+            { marginLeft: ".1in", marginBottom: ".07in" },
+          ]}
+        >
+          (Use additional CF2 if necessary):
+        </Text>
+        <Row style={[ComponentStyles.rowStyle, styles.bodyText]}>
+          <Column style={{ width: "4.2in" }}>
+            <Row style={ComponentStyles.tableHeader}>
               <Text style={{ fontSize: "8px" }}>
                 Accreditation number/Name of Accredited Health Care
                 Professional/Date Signed
               </Text>
             </Row>
             {Array.from({ length: 3 }, (_, i) => (
-              <Column style={styles.columnContainer}>
-                <Row style={{ alignItems: "flex-end" }}>
-                  <Text style={{ marginRight: ".1in" }}>
+              <Column style={ComponentStyles.columnContainer}>
+                <Row
+                  style={{
+                    alignItems: "flex-end",
+                    marginTop: ".04in",
+                    transform: "translate(-18, 0)",
+                  }}
+                >
+                  <Text
+                    style={{
+                      marginRight: ".1in",
+                    }}
+                  >
                     Accreditation No.:
                   </Text>
                   <SegmentedLineInput
@@ -65,26 +91,39 @@ export const AccreditationNumber = () => {
                 </Row>
                 <FieldInput
                   label={"Signature Over Printed Name"}
-                  width="2.06in"
-                  style={{
-                    marginRight: "0.18in",
-                  }}
+                  style={[
+                    ComponentStyles.textFields,
+                    {
+                      marginTop: "0.15in",
+                    },
+                  ]}
+                  width="3.25in"
                 />
                 <SegmentedDate
+                  fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                   label="Date Signed:"
-                  style={{ paddinTop: 0 }}
+                  leftLabelStyle={{ fontFamily: "Source Sans" }}
+                  style={{ paddingTop: 0, marginTop: ".1in" }}
                   outerHeight=".08in"
+                  dateLabel={["month", "day", "year"]}
                 />
               </Column>
             ))}
           </Column>
-          <Column style={{ width: "50%" }}>
-            <Row style={{ borderBottomWidth: 1, borderRightWidth: 1 }}>
+          <Column style={{ width: "3.8in" }}>
+            <Row style={ComponentStyles.tableHeader}>
               <Text style={{ textAlign: "center" }}>Details</Text>
             </Row>
             {Array.from({ length: 3 }, (_, i) => (
               <Column
-                style={[styles.columnContainer, { justifyContent: "center" }]}
+                style={[
+                  ComponentStyles.columnContainer,
+                  {
+                    justifyContent: "center",
+                    alignItems: "flex-start",
+                    marginLeft: ".1in",
+                  },
+                ]}
               >
                 <CheckBoxInput label="No co-pay on top of PhilHealth Benefit" />
                 <Row>
