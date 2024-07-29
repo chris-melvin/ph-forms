@@ -9,12 +9,14 @@ function SectionDivider({ text, description, flexDirection = "row" }) {
         color: "white",
         fontFamily: "Source Sans",
         fontWeight: "bold",
-        fontSize: 11.52,
+        fontSize: 11,
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
         width: "100%",
         flexDirection: flexDirection,
+        paddingTop: "0.05in",
+        paddingBottom: "0.04in",
       }}
     >
       <Text>{text}</Text>

@@ -7,7 +7,7 @@ import { styles } from "../forms/ClaimForm2";
 import SegmentedLineInput from "../../../../../src/components/SegmentedLineInput";
 import { StyleSheet } from "@react-pdf/renderer";
 
-const HeaderStyles = StyleSheet.create({
+const ComponentStyles = StyleSheet.create({
   fields: {
     marginBottom: ".05in",
   },
@@ -18,7 +18,7 @@ export const HCIinfo = () => {
     <Column style={styles.part_one_section}>
       <Row
         style={[
-          HeaderStyles.fields,
+          ComponentStyles.fields,
           { marginTop: ".05in", alignItems: "flex-end" },
         ]}
       >
@@ -29,9 +29,9 @@ export const HCIinfo = () => {
         >
           1. PhilHealth Accreditation Number (PAN) of Health Care Institution:
         </Heading1>
-        <SegmentedLineInput number={9} outerHeight=".08in" />
+        <SegmentedLineInput number={9} outerHeight=".08in" width=".155in" />
       </Row>
-      <Row style={[HeaderStyles.fields]}>
+      <Row style={[ComponentStyles.fields]}>
         <Heading1
           style={{
             marginRight: "0.04in",
@@ -41,10 +41,10 @@ export const HCIinfo = () => {
         </Heading1>
         <FieldInput width="5.60in" />
       </Row>
-      <Row style={[HeaderStyles.fields]}>
+      <Row style={[ComponentStyles.fields]}>
         <Heading1
           style={{
-            marginRight: "0.19in",
+            marginRight: "0.22in",
           }}
         >
           3. Address:
@@ -65,14 +65,14 @@ export const HCIinfo = () => {
           }}
           width="2in"
           label="City/Municipality"
-          labelStyle={{ fontWeight: "light" }}
+          labelStyle={{ fontWeight: "light", fontSize: 8 }}
         />
         <FieldInput
           style={{
             marginRight: "0.15in",
             alignItems: "center",
           }}
-          width="1.73in"
+          width="1.89in"
           label="Province"
           labelStyle={{ fontWeight: "light" }}
         />

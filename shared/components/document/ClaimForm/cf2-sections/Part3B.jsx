@@ -6,39 +6,71 @@ import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import Heading1 from "../../typography/Heading1";
 import FieldInput from "../inputs/FieldInput";
 import SegmentedDate from "../../../../../src/components/SegmentedDate";
+import { styles } from "../forms/ClaimForm2";
 
 export const Part3B = () => {
-  const styles = StyleSheet.create({
+  const ComponentStyles = StyleSheet.create({
     rowStyle: {
       borderTopWidth: 1,
       width: "100%",
     },
     columnContainer: {},
+    consentText: {
+      fontSize: "8px",
+      fontStyle: "italic",
+      fontWeight: "bold",
+    },
+    consentTextContainer: {
+      marginLeft: ".20in",
+    },
   });
+
+  const CHECKBOX_CONFIG = {
+    customHeight: ".13in",
+    customWidth: ".13in",
+    marginBottom: 0,
+    labelStyle: [
+      styles.bodyText,
+      { marginLeft: ".05in", fontWeight: "extralight", fontSize: "7px" },
+    ],
+  };
   return (
-    <Column style={styles.columnContainer}>
-      <Row>
+    <Column style={ComponentStyles.columnContainer}>
+      <Row style={[{ marginLeft: ".07in" }]}>
         <Heading1>B.CONSENT TO ACCESS PATIENT RECORD/S:</Heading1>
       </Row>
-      <Row>
-        <Text>
-          I hereby consent to the submission and examination of the patient’s
+      <Column
+        style={[ComponentStyles.consentTextContainer, { marginTop: ".1in" }]}
+      >
+        <Text style={[ComponentStyles.consentText]}>
+          I hereby consent to the submission and examination of the patient's
           pertinent medical records for the purpose of verifying the veracity of
-          this claim to effect efficient processing of benefit payment
+          this claim to effect{" "}
         </Text>
-      </Row>
-      <Row>
-        <Text>
+        <Text style={[ComponentStyles.consentText]}>
+          efficient processing of benefit payment.
+        </Text>
+      </Column>
+      <Column style={[ComponentStyles.consentTextContainer]}>
+        <Text style={ComponentStyles.consentText}>
           I hereby hold PhilHealth or any of its officers, employees and/or
           representatives free from any and all legal liabilities relative to
-          the herein-mentioned consent which I have voluntarily and willingly
-          given in connection with this claim for reimbursement before
-          PhilHealth
+          the herein-mentioned consent
         </Text>
-      </Row>
-      <Row style={{ marginTop: ".2in" }}>
+        <Text style={ComponentStyles.consentText}>
+          which I have voluntarily and willingly given in connection with this
+          claim for reimbursement before PhilHealth
+        </Text>
+      </Column>
+      <Row
+        style={{ marginTop: ".2in", marginLeft: ".2in", marginBottom: ".1in" }}
+      >
         <Column style={{ width: "4.42in" }}>
           <FieldInput
+            labelStyle={[
+              styles.bodyText,
+              { fontSize: "7.5px", marginLeft: ".1in" },
+            ]}
             label={
               "Signature Over Printed Name of Member/Patient/Authorized Representative"
             }
@@ -49,55 +81,122 @@ export const Part3B = () => {
           />
 
           <SegmentedDate
+            fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
             label="Date Signed:"
-            style={{ paddinTop: 0 }}
+            leftLabelStyle={[styles.bodyText]}
+            style={{ paddingTop: 0, marginTop: ".1in", marginLeft: ".5in" }}
             outerHeight=".08in"
+            dateLabel={["month", "day", "year"]}
           />
-          <Row>
-            <View>
-              <Text>Relationship of the representative to</Text>
-              <Text>the member/patient:</Text>
-            </View>
-            <View>
-              <Row>
-                <CheckBoxInput label="Spouse" />
-                <CheckBoxInput label="Child" /> <CheckBoxInput label="Parent" />
-              </Row>
-              <Row>
-                <CheckBoxInput label="Sibling" />
-                <CheckBoxInput label="Others, specify" />
-              </Row>
-            </View>
-          </Row>
-          <Row>
-            <View>
-              <Text>Reason for signing on behalf of the</Text>
-              <Text>member/patient:</Text>
-            </View>
-            <View>
-              <Row>
-                <CheckBoxInput
-                  label="Patient is Incapacitated
-"
-                />
-              </Row>
-              <Row>
-                <CheckBoxInput label="Others Reasons" />
-              </Row>
-            </View>
+
+          <Row style={{ marginTop: ".1in" }}>
+            <Column>
+              <Column
+                style={[
+                  styles.bodyText,
+                  {
+                    marginBottom: "0.12in",
+                    marginRight: "0.11in",
+                  },
+                ]}
+              >
+                <Text>Relationship of the</Text>
+                <Text>representative to the member/patient</Text>
+              </Column>
+              <Column
+                style={[
+                  styles.bodyText,
+                  {
+                    marginBottom: "0.12in",
+                    marginRight: "0.11in",
+                  },
+                ]}
+              >
+                <Text>Reason for signing on</Text>
+                <Text>behalf of the member/patient</Text>
+              </Column>
+            </Column>
+            <Column>
+              <Column>
+                <Row>
+                  <CheckBoxInput
+                    {...CHECKBOX_CONFIG}
+                    style={{
+                      marginRight: "0.09in",
+                    }}
+                    label={"Spouse"}
+                  />
+                  <CheckBoxInput
+                    style={{
+                      marginRight: "0.09in",
+                    }}
+                    {...CHECKBOX_CONFIG}
+                    label={"Child"}
+                  />
+                  <CheckBoxInput {...CHECKBOX_CONFIG} label={"Parent"} />
+                </Row>
+                <Row>
+                  <CheckBoxInput
+                    label={"Sibling"}
+                    {...CHECKBOX_CONFIG}
+                    style={{
+                      marginTop: "0.02in",
+                      marginRight: "0.11in",
+                    }}
+                  />
+                  <CheckBoxInput
+                    label={"Others, Specify "}
+                    {...CHECKBOX_CONFIG}
+                    style={{
+                      marginTop: "0.02in",
+                    }}
+                  />
+                  <FieldInput width="1.04in" />
+                </Row>
+              </Column>
+              <Column>
+                <Row>
+                  <CheckBoxInput
+                    {...CHECKBOX_CONFIG}
+                    style={{
+                      marginTop: "0.02in",
+                    }}
+                    label={`Patient is incapacitated`}
+                  />
+                </Row>
+                <Row>
+                  <CheckBoxInput
+                    {...CHECKBOX_CONFIG}
+                    label={"Other reasons: "}
+                    style={{
+                      marginTop: "0.02in",
+                    }}
+                  />
+                  <FieldInput width={121} />
+                </Row>
+              </Column>
+            </Column>
           </Row>
         </Column>
-        <Column>
-          <Text style={{ maxWidth: "1in" }}>
-            If patient/representative is unable to write, put right thumbmark.
-            Patient/ Representative should be assisted by an HCI representative
-          </Text>
-          <CheckBoxInput label="Patient" />
-          <CheckBoxInput label="Representative" />
+        <Column
+          style={[{ width: "1.55in", marginLeft: ".1in" }, styles.bodyText]}
+        >
+          <Text>If patient/representative</Text>
+          <Text>is unable to write, put</Text>
+          <Text>right thumbmark. Patient/</Text>
+          <Text>Representative should be</Text>
+          <Text>assisted by an HCI representative.</Text>
+
+          <CheckBoxInput
+            {...CHECKBOX_CONFIG}
+            label="Patient"
+            style={{ marginBottom: ".02in", marginTop: ".25in" }}
+          />
+          <CheckBoxInput {...CHECKBOX_CONFIG} label="Representative" />
         </Column>
         <Column>
           <View
-            style={{ width: "1.16in", height: "1.36in", borderWidth: 1 }}
+            style={{ width: "1.16in", height: "1.36in", borderWidth: 2 }}
           ></View>
         </Column>
       </Row>

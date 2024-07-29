@@ -7,7 +7,8 @@ import Row from "../../layout/Row";
 
 const headerStyles = StyleSheet.create({
   minion_regular: {
-    fontFamily: "Source Sans",
+    fontFamily: "Minion Pro",
+    fontSize: "8px",
   },
 });
 
@@ -21,10 +22,18 @@ function PhilHealthHeaderPart({ style }) {
         ...style,
       }}
     >
-      <Text style={[{ fontFamily: "Source Sans" }]}>
+      <Text
+        style={[
+          { fontFamily: "Minion Pro", fontStyle: "italic", fontSize: "8px" },
+        ]}
+      >
         Republic of the Philippines
       </Text>
-      <BoldText fontFamily="Source Sans" fontSize={11.52}>
+      <BoldText
+        fontFamily="Minion Pro"
+        fontSize="12px"
+        style={{ letterSpacing: 0.5 }}
+      >
         PHILIPPINE HEALTH INSURANCE CORPORATION
       </BoldText>
       <Text style={[headerStyles.minion_regular]}>

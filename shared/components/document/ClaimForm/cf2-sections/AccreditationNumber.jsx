@@ -121,14 +121,26 @@ export const AccreditationNumber = () => {
                   {
                     justifyContent: "center",
                     alignItems: "flex-start",
-                    marginLeft: ".1in",
+                    paddingLeft: ".1in",
                   },
                 ]}
               >
-                <CheckBoxInput label="No co-pay on top of PhilHealth Benefit" />
-                <Row>
-                  <CheckBoxInput label="With co-pay on top of PhilHealth Benefit" />{" "}
-                  <Text>P</Text> <FieldInput width="1in" />
+                <CheckBoxInput
+                  customHeight=".17in"
+                  customWidth=".17in"
+                  labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                  label="No co-pay on top of PhilHealth Benefit"
+                />
+                <Row style={{ alignItems: "center" }}>
+                  <CheckBoxInput
+                    customHeight=".17in"
+                    customWidth=".17in"
+                    labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                    label="With co-pay on top of PhilHealth Benefit"
+                    style={{ marginRight: ".1in" }}
+                  />
+                  <Text style={{ marginRight: ".07in" }}>P</Text>{" "}
+                  <FieldInput width="1in" />
                 </Row>
               </Column>
             ))}

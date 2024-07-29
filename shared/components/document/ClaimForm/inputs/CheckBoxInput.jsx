@@ -20,35 +20,41 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    borderColor: '#000',
+    borderColor: "#000",
   },
   smLabel: {
-    alignSelf: 'center',
-    fontFamily: 'Source Sans',
+    alignSelf: "center",
+    fontFamily: "Source Sans",
   },
 });
 
-const CheckBoxInput = ({ children, label, style, isSmall = false, boxMarginRight = '0.05in' }) => (
+const CheckBoxInput = ({
+  children,
+  label,
+  style,
+  isSmall = false,
+  boxMarginRight = "0.05in",
+  debug,
+}) => (
   <Row
     style={{
       ...(isSmall ? { maxHeight: 14 } : { marginRight: 5, marginBottom: 3 }),
       ...style,
     }}
+    debug={debug}
   >
-    {isSmall
-      ? (
-          <>
-            <BoxInput number={1} style={{ marginRight: boxMarginRight }} />
-            <Text style={[styles.smLabel]}>{label}</Text>
-          </>
-        )
-      : (
-        <>
-          <View style={styles.square} />
-          {label && <Text style={styles.label}>{label}</Text>}
-          {children}
-        </>
-        )}
+    {isSmall ? (
+      <>
+        <BoxInput number={1} style={{ marginRight: boxMarginRight }} />
+        <Text style={[styles.smLabel]}>{label}</Text>
+      </>
+    ) : (
+      <>
+        <View style={styles.square} />
+        {label && <Text style={styles.label}>{label}</Text>}
+        {children}
+      </>
+    )}
   </Row>
 );
 

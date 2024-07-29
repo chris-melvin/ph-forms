@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   lowerText: {
-    padding: "0.03in",
+    paddingTop: "0.07in",
     textAlign: "center",
     width: "100%",
   },

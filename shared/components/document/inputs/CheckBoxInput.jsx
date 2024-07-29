@@ -4,13 +4,12 @@ import BoxInput from "./BoxInput";
 import Row from "../ClaimForm/layout/Row";
 
 const styles = StyleSheet.create({
-  label: {
-    textAlign: "center",
-    fontFamily: "Arial Narrow",
-    paddingTop: 2,
-    flexWrap: "nowrap",
-    overflow: "visible",
-  },
+  // label: {
+  //   textAlign: "center",
+  //   paddingTop: 2,
+  //   flexWrap: "nowrap",
+  //   overflow: "visible",
+  // },
   smallSquare: {
     // minWidth: 14,
     width: ".11in",
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
     borderColor: "#000",
   },
   square: {
-    marginRight: 5,
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderLeftWidth: 1,
@@ -43,17 +41,27 @@ const CheckBoxInput = ({
   children,
   label,
   style,
-  isSmall = true,
+  isSmall = false,
   customSquareSize,
-  boxMarginRight = "0.05in",
+  boxMarginRight,
   customWidth = ".16in",
   customHeight = ".18in",
+  debug,
+  marginBottom = 3,
+  labelStyle = {
+    textAlign: "center",
+    paddingTop: 2,
+    flexWrap: "nowrap",
+    overflow: "visible",
+    marginLeft: ".05in",
+  },
 }) => (
   <Row
     style={{
-      ...(isSmall ? { maxHeight: 14 } : { marginBottom: 3 }),
+      ...(isSmall ? { maxHeight: 14 } : { marginBottom: marginBottom }),
       ...style,
     }}
+    debug={debug}
   >
     {isSmall ? (
       <>
@@ -71,6 +79,7 @@ const CheckBoxInput = ({
         <View
           style={[
             styles.square,
+
             {
               minWidth: customWidth,
               height: customHeight,
@@ -78,7 +87,7 @@ const CheckBoxInput = ({
             },
           ]}
         />
-        {label && <Text style={styles.label}>{label}</Text>}
+        {label && <Text style={[labelStyle]}>{label}</Text>}
         {children}
       </>
     )}

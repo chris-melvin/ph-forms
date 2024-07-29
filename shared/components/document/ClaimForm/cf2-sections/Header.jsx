@@ -2,12 +2,17 @@ import React from "react";
 import Row from "../layout/Row";
 import Column from "../layout/Column";
 import PhilHealthHeaderPart from "../document-parts/PhilHealthHeader";
-import { Image, Text, View } from "@react-pdf/renderer";
+import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
 import BoxInput from "../inputs/BoxInput";
 import BoldText from "../../typography/BoldText";
 import { styles } from "../forms/ClaimForm2";
 import PhilHealthLogo from "../logo/philhealth_logo.png";
 
+const ComponentStyles = StyleSheet.create({
+  text: {
+    letterSpacing: 0.02,
+  },
+});
 export const Header = () => {
   return (
     <>
@@ -27,8 +32,24 @@ export const Header = () => {
         />
         <Column>
           <Column style={styles.header_right}>
-            <Text>This form may be reproduced and</Text>
-            <Text>is NOT FOR SALE</Text>
+            <Text
+              style={{
+                fontFamily: "Source Sans",
+                fontWeight: "light",
+                fontSize: "8px",
+              }}
+            >
+              This form may be reproduced and
+            </Text>
+            <Text
+              style={{
+                fontFamily: "Source Sans",
+                fontWeight: "light",
+                fontSize: "8px",
+              }}
+            >
+              is NOT FOR SALE
+            </Text>
             <View
               style={{
                 height: "0.50in",
@@ -43,6 +64,7 @@ export const Header = () => {
               style={{
                 position: "absolute",
                 fontSize: 38,
+                fontWeight: "bold",
                 fontFamily: "Source Sans",
                 alignSelf: "center",
                 top: "0.25in",
@@ -50,8 +72,17 @@ export const Header = () => {
             >
               CF-2
             </Text>
-            <Text style={{ fontFamily: "Source Sans" }}>(Claim Form 2)</Text>
-            <Text>Revised September 2018</Text>
+            <Text
+              style={{
+                fontFamily: "Source Sans",
+                fontWeight: "bold",
+                fontSize: 10,
+                marginTop: "0.05in",
+              }}
+            >
+              (Claim Form 2)
+            </Text>
+            <Text style={styles.bodyText}>Revised September 2018</Text>
           </Column>
           <Column
             style={{
@@ -60,7 +91,7 @@ export const Header = () => {
           >
             <View
               style={{
-                right: 0,
+                right: -10,
                 position: "absolute",
                 flexDirection: "row",
               }}
@@ -73,14 +104,19 @@ export const Header = () => {
               >
                 Series #
               </Text>
-              <BoxInput number={10} />
+              <BoxInput number={13} />
             </View>
           </Column>
         </Column>
       </Row>
       <Column style={styles.bottom_header}>
-        <BoldText>IMPORTANT REMINDERS:</BoldText>
-        <Row>
+        <BoldText
+          fontSize="9px"
+          style={{ letterSpacing: 0.05, marginBottom: ".02in" }}
+        >
+          IMPORTANT REMINDERS:
+        </BoldText>
+        <Row style={[ComponentStyles.text]}>
           <Text>PLEASE WRITE IN CAPITAL </Text>
           <BoldText>LETTERS </BoldText>
           <Text>AND </Text>
@@ -88,15 +124,16 @@ export const Header = () => {
           <Text>THE APPROPRIATE BOXES.</Text>
         </Row>
 
-        <Text>
+        <Text style={[ComponentStyles.text]}>
           This form together with other supporting documents should be filed
           within sixty (60) calendar days from date of discharge.
         </Text>
-        <Text>
+        <Text style={[ComponentStyles.text]}>
           All information, fields and trick boxes required in this form are
-          necessary. Claim forms with incomplete information
+          necessary. Claim forms with incomplete information shall not be
+          processed.
         </Text>
-        <BoldText>
+        <BoldText style={[ComponentStyles.text]}>
           FALSE/INCORRECT INFORMATION OR MISREPRESENTATION SHALL BE SUBJECT TO
           CRIMINAL, CIVIL OR ADMINISTRATIVE LIABILITIES.
         </BoldText>

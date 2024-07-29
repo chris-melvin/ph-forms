@@ -54,6 +54,10 @@ const registerSourceSans = () => {
     family: "Source Sans",
     fonts: [
       {
+        fontWeight: "extralight",
+        src: "../../../fonts/source sans pro/SourceSansPro-ExtraLight.otf",
+      },
+      {
         fontWeight: "light",
         src: "https://cdn.jsdelivr.net/fontsource/fonts/source-sans-pro@latest/latin-300-normal.ttf",
       },
@@ -65,6 +69,11 @@ const registerSourceSans = () => {
         fontWeight: "semibold",
         src: "https://cdn.jsdelivr.net/fontsource/fonts/source-sans-pro@latest/latin-600-normal.ttf",
       },
+      // {
+      //   fontStyle: "italic",
+      //   fontWeight: "bold",
+      //   src: "../../../fonts/source sans pro/SourceSansPro-BoldIt.otf",
+      // },
       {
         fontWeight: "bold",
         src: "https://cdn.jsdelivr.net/fontsource/fonts/source-sans-pro@latest/latin-700-normal.ttf",

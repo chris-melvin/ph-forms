@@ -26,11 +26,15 @@ registerMinionPro();
 export const styles = StyleSheet.create({
   page: {
     maxWidth: "100%",
-    padding: "0.25in",
+    // padding: "0.25in",
+    paddingLeft: "0.25in",
+    paddingRight: ".22in",
+    paddingTop: ".25in",
+    paddingBottom: ".25in",
   },
 
   body: {
-    borderWidth: 3,
+    borderWidth: 2,
     borderColor: "#000",
     borderStyle: "solid",
     height: "100%",
@@ -59,19 +63,41 @@ export const styles = StyleSheet.create({
   bottom_header: {
     marginTop: "0.05in",
     marginLeft: "0.07in",
+    marginBottom: ".025in",
     letterSpacing: DEFAULT_LETTER_SPACING,
+    fontFamily: "Source Sans",
+    fontWeight: "light",
+    fontSize: "8px",
   },
   part_one_section: {
     margin: "0.07in",
     marginTop: 0,
     letterSpacing: DEFAULT_LETTER_SPACING,
   },
+  bodyText: {
+    fontSize: 8,
+    fontFamily: "Source Sans",
+    fontWeight: "light",
+  },
+  alignItemsEnd: {
+    alignItems: "flex-end",
+  },
+  checkBoxLabel: {
+    marginLeft: ".13in",
+    paddingTop: 2,
+  },
 });
 
 function CF2() {
   return (
     <Document>
-      <Page size="LEGAL" style={styles.page}>
+      <Page
+        size={{
+          width: 612,
+          height: 936,
+        }}
+        style={styles.page}
+      >
         <Column style={styles.body}>
           {/* Header Start */}
           <Header />
@@ -124,8 +150,13 @@ function CF2() {
             flexDirection="column"
             text="PART IV - CERTIFICATION OF CONSUMPTION OF HEALTH CARE INSTITUTION"
           />
-          <Text>
-            I certify that services rendered were recorded in the patient’s
+          <Text
+            style={[
+              styles.bodyText,
+              { fontStyle: "italic", marginLeft: ".25in", marginTop: ".1in" },
+            ]}
+          >
+            I certify that services rendered were recorded in the patient's
             chart and health care institution records and that the herein
             information given are true and correct.
           </Text>
@@ -134,22 +165,36 @@ function CF2() {
               label={
                 "Signature Over Printed Name of Authorized HCI Representative"
               }
-              width="2.06in"
+              labelStyle={[styles.bodyText]}
+              width="2.83in"
               style={{
                 marginRight: "0.18in",
+                alignItems: "center",
+                marginLeft: ".2in",
               }}
             />
             <FieldInput
               label={"Official Capacity/Designation"}
               width="2.06in"
+              labelStyle={[styles.bodyText]}
               style={{
                 marginRight: "0.18in",
+                alignItems: "center",
               }}
             />
+
             <SegmentedDate
+              fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
               label="Date Signed:"
-              style={{ paddinTop: 0 }}
+              leftLabelStyle={[styles.bodyText]}
+              style={{
+                paddingTop: 0,
+                marginTop: ".1in",
+                marginLeft: ".2in",
+                marginRight: ".2in",
+              }}
               outerHeight=".08in"
+              dateLabel={["month", "day", "year"]}
             />
           </Row>
         </Column>

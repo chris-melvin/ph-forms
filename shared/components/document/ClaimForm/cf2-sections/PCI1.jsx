@@ -3,17 +3,20 @@ import Row from "../layout/Row";
 import Column from "../layout/Column";
 import Heading1 from "../../typography/Heading1";
 import FieldInput from "../inputs/FieldInput";
-import CheckBoxInput from "../inputs/CheckBoxInput";
 import AddressInput from "../inputs/AddressInput";
 import SegmentedTimeInput from "../inputs/SegmentedTimeInput";
 import { StyleSheet, Text } from "@react-pdf/renderer";
 import { styles } from "../forms/ClaimForm2";
 import SegmentedDate from "../../../../../src/components/SegmentedDate";
 import TimeInput from "../inputs/TimeInput";
+import CheckBoxInput from "../../inputs/CheckBoxInput";
 
 const ComponentStyles = StyleSheet.create({
   textFields: {
     alignItems: "center",
+  },
+  rowStyles: {
+    marginBottom: ".07in",
   },
 });
 
@@ -34,7 +37,7 @@ export const PCI1 = () => {
       <Column
         style={{
           margin: "0.07in",
-          marginTop: 0,
+          padding: "0.05in",
         }}
       >
         <Row>
@@ -76,23 +79,30 @@ export const PCI1 = () => {
             />
           </Row>
         </Row>
-        <Heading1>
+        <Heading1 style={[ComponentStyles.rowStyles]}>
           2. Was patient referred by another Health Care Institution (HCI)?
         </Heading1>
         <Row
-          style={{
-            marginLeft: "0.12in",
-          }}
+          style={[
+            ComponentStyles.rowStyles,
+            {
+              marginLeft: "0.12in",
+            },
+          ]}
         >
           <CheckBoxInput
-            isSmall
+            customHeight=".17in"
+            customWidth=".17in"
+            labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             label={"NO"}
             style={{
               marginRight: "0.11in",
             }}
           />
           <CheckBoxInput
-            isSmall
+            customHeight=".17in"
+            customWidth=".17in"
+            labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             label={"YES"}
             style={{
               marginRight: "0.11in",
@@ -109,7 +119,7 @@ export const PCI1 = () => {
             labelStyle={styles.bodyText}
           />
         </Row>
-        <Row>
+        <Row style={[ComponentStyles.rowStyles]}>
           <Heading1
             style={{
               marginRight: "0.23in",
@@ -125,26 +135,32 @@ export const PCI1 = () => {
                 outerHeight={INPUT_CONSTANTS.outerHeight}
                 boxWidth={INPUT_CONSTANTS.width}
                 style={{
+                  paddingTop: 0,
                   marginRight: "0.23in",
                 }}
               />
               <TimeInput
                 label={"b. Time Admitted"}
                 style={{
+                  paddingTop: 0,
                   marginRight: "0.23in",
                 }}
               />
 
               <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
                 label={"AM"}
-                isSmall
                 style={{
                   marginRight: "0.18in",
                 }}
               />
               <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
                 label={"PM"}
-                isSmall
                 style={{
                   marginRight: "0.24in",
                 }}
@@ -157,25 +173,31 @@ export const PCI1 = () => {
                 outerHeight={INPUT_CONSTANTS.outerHeight}
                 boxWidth={INPUT_CONSTANTS.width}
                 style={{
+                  paddingTop: 0,
                   marginRight: "0.20in",
                 }}
               />
               <TimeInput
                 label={"d. Time Discharge"}
                 style={{
+                  paddingTop: 0,
                   marginRight: "0.23in",
                 }}
               />
               <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
                 label={"AM"}
-                isSmall
                 style={{
                   marginRight: "0.18in",
                 }}
               />
               <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
                 label={"PM"}
-                isSmall
                 style={{
                   marginRight: "0.24in",
                 }}
@@ -183,7 +205,7 @@ export const PCI1 = () => {
             </Row>
           </Column>
         </Row>
-        <Row>
+        <Row style={ComponentStyles.rowStyles}>
           <Heading1>4. Patient Disposition: </Heading1>
           <Text>(select only 1)</Text>
         </Row>
@@ -195,22 +217,25 @@ export const PCI1 = () => {
           <Row style={[styles.alignItemsEnd]}>
             <CheckBoxInput
               label={"a. Improved"}
-              boxMarginRight="0.22in"
-              isSmall
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               style={{
                 marginRight: "1.28in",
               }}
             />
             <CheckBoxInput
               label={"e. Expired"}
-              boxMarginRight="0.18in"
-              isSmall
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               style={{
                 marginRight: "0.19in",
               }}
             />
             <SegmentedDate
               style={{
+                paddingTop: 0,
                 marginRight: "0.20in",
               }}
               innerHeight={INPUT_CONSTANTS.innerHeight}
@@ -220,19 +245,24 @@ export const PCI1 = () => {
             <TimeInput
               label={"Time: "}
               style={{
+                paddingTop: 0,
                 marginRight: "0.24in",
               }}
             />
             <CheckBoxInput
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               label={"AM"}
-              isSmall
               style={{
                 marginRight: "0.18in",
               }}
             />
             <CheckBoxInput
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               label={"PM"}
-              isSmall
               style={{
                 marginRight: "0.24in",
               }}
@@ -240,17 +270,19 @@ export const PCI1 = () => {
           </Row>
           <Row>
             <CheckBoxInput
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               label={"b. Recovered"}
-              boxMarginRight="0.22in"
-              isSmall
               style={{
-                marginRight: "1.24in",
+                marginRight: "1.20in",
               }}
             />
             <CheckBoxInput
               label={"f. Transferred/Referred"}
-              isSmall
-              boxMarginRight="0.22in"
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               style={{
                 marginRight: "0.08in",
               }}
@@ -266,8 +298,9 @@ export const PCI1 = () => {
           <Row>
             <CheckBoxInput
               label={"c. Home/Discharged Against Medical Advise"}
-              isSmall
-              boxMarginRight="0.22in"
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               style={{
                 marginRight: "0.90in",
               }}
@@ -280,8 +313,9 @@ export const PCI1 = () => {
           <Row>
             <CheckBoxInput
               label={"d. Absconded"}
-              isSmall
-              boxMarginRight="0.23in"
+              customHeight=".17in"
+              customWidth=".17in"
+              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
               style={{
                 marginRight: "1.67in",
               }}
@@ -302,14 +336,18 @@ export const PCI1 = () => {
           </Heading1>
           <CheckBoxInput
             label="Private"
-            isSmall
+            customHeight=".17in"
+            customWidth=".17in"
+            labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             style={{
               marginRight: "0.18in",
             }}
             boxMarginRight="0.13in"
           />
           <CheckBoxInput
-            isSmall
+            customHeight=".17in"
+            customWidth=".17in"
+            labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             label="Non-Private (Charity/Service)"
             boxMarginRight="0.13in"
           />

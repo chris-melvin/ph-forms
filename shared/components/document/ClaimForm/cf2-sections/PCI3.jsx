@@ -3,23 +3,39 @@ import Row from "../layout/Row";
 import Column from "../layout/Column";
 import Heading1 from "../../typography/Heading1";
 import { StyleSheet, Text } from "@react-pdf/renderer";
-import CheckBoxInput from "../inputs/CheckBoxInput";
 import FieldInput from "../inputs/FieldInput";
 import BoxTextInput from "../inputs/BoxTextInput";
+import { styles } from "../forms/ClaimForm2";
+import CheckBoxInput from "../../inputs/CheckBoxInput";
 
+const ComponentStyles = StyleSheet.create({
+  row: {
+    marginBottom: ".07in",
+    marginLeft: ".2in",
+  },
+  fieldInput: {
+    marginRight: ".1in",
+  },
+  columnContainer: {},
+});
 export const PCI3 = () => {
-  const ComponentStyles = StyleSheet.create({
-    row: {
-      marginTop: ".07in",
-    },
-    fieldInput: {
-      marginRight: ".1in",
-    },
-    columnContainer: {},
-  });
+  const CHECKBOX_CONFIG = {
+    customHeight: ".17in",
+    customWidth: ".17in",
+    marginBottom: ".05in",
+    labelStyle: [
+      styles.bodyText,
+      styles.checkBoxLabel,
+      { marginLeft: ".05in", fontSize: 7 },
+    ],
+  };
   return (
     <Column
-      style={{ fontSize: "7", fontFamily: "Source Sans", fontWeight: "light" }}
+      style={{
+        fontSize: "7.5",
+        fontFamily: "Source Sans",
+        fontWeight: "light",
+      }}
     >
       <Row
         style={{
@@ -40,11 +56,11 @@ export const PCI3 = () => {
         style={{
           borderBottom: "1.5 #000 solid",
           height: "3.31in",
+          marginTop: ".03in",
         }}
       >
         <Column
           style={{
-            margin: "0.07in",
             marginRight: 0,
             marginTop: 0,
           }}
@@ -66,39 +82,18 @@ export const PCI3 = () => {
                 marginRight: "0.20in",
               }}
             >
-              <CheckBoxInput isSmall label={"Hemodialysis"} />
-              <CheckBoxInput isSmall label={"Peritoneal Dialysis"} />
-              <CheckBoxInput isSmall label={"Radiotherapy (LINAC)"} />
-              <CheckBoxInput isSmall label={"Radiotherapy (COBALT)"} />
-            </Column>
-            <Column
-              style={{
-                marginRight: "0.20in",
-              }}
-            >
-              <FieldInput
-                width={"2.05in"}
-                style={{
-                  height: "0.17in",
-                }}
+              <CheckBoxInput {...CHECKBOX_CONFIG} label={"Hemodialysis"} />
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Peritoneal Dialysis"}
               />
-              <FieldInput
-                width={"2.05in"}
-                style={{
-                  height: "0.17in",
-                }}
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Radiotherapy (LINAC)"}
               />
-              <FieldInput
-                width={"2.05in"}
-                style={{
-                  height: "0.17in",
-                }}
-              />
-              <FieldInput
-                width={"2.05in"}
-                style={{
-                  height: "0.17in",
-                }}
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Radiotherapy (COBALT)"}
               />
             </Column>
             <Column
@@ -106,10 +101,43 @@ export const PCI3 = () => {
                 marginRight: "0.20in",
               }}
             >
-              <CheckBoxInput isSmall label={"Blood Transfusion"} />
-              <CheckBoxInput isSmall label={"Brachytherapy"} />
-              <CheckBoxInput isSmall label={"Chemotherapy"} />
-              <CheckBoxInput isSmall label={"Simple Debridement"} />
+              <FieldInput
+                width={"2.05in"}
+                style={{
+                  height: "0.17in",
+                }}
+              />
+              <FieldInput
+                width={"2.05in"}
+                style={{
+                  height: "0.17in",
+                }}
+              />
+              <FieldInput
+                width={"2.05in"}
+                style={{
+                  height: "0.17in",
+                }}
+              />
+              <FieldInput
+                width={"2.05in"}
+                style={{
+                  height: "0.17in",
+                }}
+              />
+            </Column>
+            <Column
+              style={{
+                marginRight: "0.20in",
+              }}
+            >
+              <CheckBoxInput {...CHECKBOX_CONFIG} label={"Blood Transfusion"} />
+              <CheckBoxInput {...CHECKBOX_CONFIG} label={"Brachytherapy"} />
+              <CheckBoxInput {...CHECKBOX_CONFIG} label={"Chemotherapy"} />
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Simple Debridement"}
+              />
             </Column>
             <Column
               style={{
@@ -161,7 +189,7 @@ export const PCI3 = () => {
                 c. For MCP Package (enumerate four dates [mm-dd-year] of
                 pre-natal check-ups)
               </Text>
-              <Row>
+              <Row style={{ marginTop: ".07in" }}>
                 <Text
                   style={{
                     marginLeft: "0.08in",
@@ -213,20 +241,24 @@ export const PCI3 = () => {
               </Row>
             </Column>
           </Row>
-          <Row style={[ComponentStyles.row]}>
-            <Text>d. For TB DOTS Package</Text>
-            <CheckBoxInput isSmall label={"Intensive Phase"} />
-            <CheckBoxInput isSmall label={"Maintenance Phase"} />
+          <Row style={[ComponentStyles.row, { alignItems: "center" }]}>
+            <Text style={{ marginRight: ".31in" }}>d. For TB DOTS Package</Text>
+            <CheckBoxInput
+              {...CHECKBOX_CONFIG}
+              label={"Intensive Phase"}
+              style={{ marginRight: ".36in" }}
+            />
+            <CheckBoxInput {...CHECKBOX_CONFIG} label={"Maintenance Phase"} />
           </Row>
           <Row style={[ComponentStyles.row]}>
             <Column>
-              <Row>
+              <Row style={{ justifyContent: "space-between" }}>
                 <Text>
                   e. For Animal Bite Package (write the dates [mm-dd-year] when
                   the following doses of vaccine were given)
                 </Text>
-                <BoxTextInput>
-                  <Heading1 fontSize={8.64}>
+                <BoxTextInput style={{ paddingBottom: ".04in" }}>
+                  <Heading1 fontSize={8}>
                     Note: Anti Rabies Vaccine (ARV), Rabies Immunoglobulin (RIG)
                   </Heading1>
                 </BoxTextInput>
@@ -279,24 +311,35 @@ export const PCI3 = () => {
                   f. For Newborn Care Package
                 </Text>
                 <CheckBoxInput
-                  isSmall
+                  {...CHECKBOX_CONFIG}
                   label={"Essential Newborn Care"}
                   style={{ marginRight: ".08in" }}
                 />
                 <CheckBoxInput
-                  isSmall
+                  {...CHECKBOX_CONFIG}
                   label={"Newborn Hearing Screening Test"}
                   style={{ marginRight: ".08in" }}
                 />
                 <CheckBoxInput
-                  isSmall
+                  {...CHECKBOX_CONFIG}
                   label={"Newborn Screening Test"}
                   style={{ marginRight: ".08in" }}
                 />
               </Row>
-              <BoxTextInput style={{ width: "2.56in" }} boxWidth="2.56in">
-                <Heading1 fontSize={8.64}>For Essential Newborn Care</Heading1>
-                <Text>(check applicable boxes)</Text>
+              <BoxTextInput
+                style={{
+                  width: "2.57in",
+                  paddingBottom: ".04in",
+                  paddingHorizontal: ".07in",
+                }}
+                boxWidth="2.57in"
+              >
+                <Row>
+                  <Heading1 fontSize={7.5} style={{ marginRight: ".02in" }}>
+                    For Essential Newborn Care
+                  </Heading1>
+                  <Text>(check applicable boxes)</Text>
+                </Row>
               </BoxTextInput>
             </Column>
 
@@ -317,38 +360,78 @@ export const PCI3 = () => {
               <Text>please attach NBS Filter Sticker here</Text>
             </BoxTextInput>
           </Row>
-          <Row>
+          <Row
+            style={{
+              marginLeft: "0.32in",
+            }}
+          >
             <Column>
-              <CheckBoxInput isSmall label={"Immediate drying of newborn"} />
-              <CheckBoxInput isSmall label={"Early skin-to-skin contact"} />
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Immediate drying of newborn"}
+              />
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Early skin-to-skin contact"}
+              />
             </Column>
-            <Column>
-              <CheckBoxInput isSmall label={"Timely cord clamping"} />
-              <CheckBoxInput isSmall label={"Eye Prophylaxis"} />
+            <Column
+              style={{
+                marginLeft: "0.31in",
+              }}
+            >
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Timely cord clamping"}
+              />
+              <CheckBoxInput {...CHECKBOX_CONFIG} label={"Eye Prophylaxis"} />
             </Column>
-            <Column>
-              <CheckBoxInput isSmall label={"Weighing of the newborn"} />
-              <CheckBoxInput isSmall label={"Vitamin K administration"} />
+            <Column
+              style={{
+                marginLeft: "0.31in",
+              }}
+            >
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Weighing of the newborn"}
+              />
+              <CheckBoxInput
+                {...CHECKBOX_CONFIG}
+                label={"Vitamin K administration"}
+              />
             </Column>
-            <Column>
+            <Column
+              style={{
+                marginLeft: "0.31in",
+              }}
+            >
               <Row>
-                <CheckBoxInput isSmall label={"BCG vaccination"} />
-                <CheckBoxInput isSmall label={"Hepatitis B vaccination"} />
+                <CheckBoxInput
+                  {...CHECKBOX_CONFIG}
+                  label={"BCG vaccination"}
+                  style={{
+                    marginRight: "0.31in",
+                  }}
+                />
+                <CheckBoxInput
+                  {...CHECKBOX_CONFIG}
+                  label={"Hepatitis B vaccination"}
+                />
               </Row>
               <CheckBoxInput
-                isSmall
+                {...CHECKBOX_CONFIG}
                 label={
                   "Non-separation of mother/baby for early breastfeeding initiation"
                 }
               />
             </Column>
           </Row>
-          <Row style={ComponentStyles.row}>
+          <Row style={[ComponentStyles.row, { alignItems: "flex-end" }]}>
             <Text style={{ marginRight: ".57in" }}>
               g. For Outpatient HIV/AIDS Treatment Package
             </Text>
             <Heading1 fontSize={8.64}>Laboratory Number:</Heading1>
-            <FieldInput />
+            <FieldInput width="2in" />
           </Row>
         </Column>
       </Row>

@@ -5,6 +5,8 @@ import Row from "../layout/Row";
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import Heading1 from "../../typography/Heading1";
 import FieldInput from "../inputs/FieldInput";
+import { styles } from "../forms/ClaimForm2";
+import BoldText from "../../typography/BoldText";
 
 const ComponentStyles = StyleSheet.create({
   rowStyle: {
@@ -64,12 +66,13 @@ const ComponentStyles = StyleSheet.create({
     marginBottom: ".07in",
   },
   CheckBoxContainer: {
+    marginTop: ".07in",
     marginLeft: ".2in",
   },
   cellText: {
     marginLeft: ".07in",
-    marginTop: ".07in",
-    marginBottom: ".05in",
+    marginTop: ".03in",
+    marginBottom: ".02in",
   },
   tableLabel: { marginLeft: ".50in", marginBottom: ".03in" },
 
@@ -90,13 +93,32 @@ const ComponentStyles = StyleSheet.create({
 });
 
 export const Part3A = () => {
+  const CHECKBOX_CONFIG = {
+    customHeight: ".13in",
+    customWidth: ".13in",
+    marginBottom: 0,
+    labelStyle: [
+      styles.bodyText,
+      { marginLeft: ".05in", fontWeight: "extralight", fontSize: "7px" },
+    ],
+  };
   return (
     <Column style={ComponentStyles.columnContainer}>
-      <Row style={[ComponentStyles.row, { marginTop: ".07in" }]}>
+      <Row
+        style={[
+          ComponentStyles.row,
+          { marginTop: ".07in", marginLeft: ".07in" },
+        ]}
+      >
         <Heading1>A.CERTIFICATION OF CONSUMPTION OF BENEFITS:</Heading1>
       </Row>
       <Row style={[ComponentStyles.row, ComponentStyles.CheckBoxContainer]}>
-        <CheckBoxInput isSmall={false} customHeight=".2in" customWidth=".2in" />
+        <CheckBoxInput
+          isSmall={false}
+          customHeight=".2in"
+          customWidth=".2in"
+          style={{ marginRight: ".1in" }}
+        />
         <View>
           <Text>PhilHealth benefit is enough to cover HCI and PF Charges.</Text>
           <Text>
@@ -137,7 +159,12 @@ export const Part3A = () => {
       ))}
 
       <Row style={[ComponentStyles.row, ComponentStyles.CheckBoxContainer]}>
-        <CheckBoxInput isSmall={false} customHeight=".2in" customWidth=".2in" />
+        <CheckBoxInput
+          isSmall={false}
+          customHeight=".2in"
+          customWidth=".2in"
+          style={{ marginRight: ".1in" }}
+        />
         <View>
           <Text>
             The benefit of the member/patient was completely consumed prior to
@@ -223,7 +250,6 @@ export const Part3A = () => {
             ComponentStyles.cell,
             { justifyContent: "center", paddingLeft: ".05in" },
           ]}
-          debug
         >
           <Text>Total Health </Text>
           <Text>Care Institution Fees</Text>
@@ -262,25 +288,24 @@ export const Part3A = () => {
 
             <FieldInput width="1.25in" />
           </Row>
-          <Text>Paid by (check all that applies):</Text>
+          <Text style={{ marginBottom: ".05in" }}>
+            Paid by (check all that applies):
+          </Text>
           <Row>
             <CheckBoxInput
-              isSmall={true}
-              customHeight=".2in"
-              customWidth=".2in"
+              {...CHECKBOX_CONFIG}
+              style={{ marginBottom: ".05in", marginRight: ".1in" }}
               label="Member/Patient"
             />
             <CheckBoxInput
-              isSmall={true}
-              customHeight=".2in"
-              customWidth=".2in"
+              {...CHECKBOX_CONFIG}
+              style={{ marginBottom: ".05in", marginRight: ".1in" }}
               label="HMO"
             />
           </Row>
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
+            style={{ marginBottom: ".05in" }}
             label="Others (i.e., PCSO, Promisory note, etc.)"
           />
         </Column>
@@ -335,25 +360,24 @@ export const Part3A = () => {
 
             <FieldInput width="1.25in" />
           </Row>
-          <Text>Paid by (check all that applies):</Text>
+          <Text style={{ marginBottom: ".05in" }}>
+            Paid by (check all that applies):
+          </Text>
           <Row>
             <CheckBoxInput
-              isSmall={true}
-              customHeight=".2in"
-              customWidth=".2in"
+              {...CHECKBOX_CONFIG}
+              style={{ marginBottom: ".05in", marginRight: ".1in" }}
               label="Member/Patient"
             />
             <CheckBoxInput
-              isSmall={true}
-              customHeight=".2in"
-              customWidth=".2in"
+              {...CHECKBOX_CONFIG}
+              style={{ marginBottom: ".05in", marginRight: ".1in" }}
               label="HMO"
             />
           </Row>
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
+            style={{ marginBottom: ".05in" }}
             label="Others (i.e., PCSO, Promisory note, etc.)"
           />
         </Column>
@@ -388,15 +412,13 @@ export const Part3A = () => {
           ]}
         >
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
             label="None"
+            style={{ marginRight: ".3in" }}
           />
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
+            style={{ marginRight: ".1in" }}
             label="Total Amount"
           />
           <Text>P</Text> <FieldInput width="1in" />
@@ -418,28 +440,26 @@ export const Part3A = () => {
           ]}
         >
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
             label="None"
+            style={{ marginRight: ".3in" }}
           />
           <CheckBoxInput
-            isSmall={true}
-            customHeight=".2in"
-            customWidth=".2in"
+            {...CHECKBOX_CONFIG}
+            style={{ marginRight: ".1in" }}
             label="Total Amount"
           />
           <Text>P</Text> <FieldInput width="1in" />
         </Column>
       </Row>
-      <Row>
-        <Text
-          style={[
-            { marginLeft: ".52in", marginBottom: ".1in", marginTop: ".07" },
-          ]}
-        >
-          * NOTE: Total Actual Charges should be based on Statement of Account
-          (SOA)
+      <Row
+        style={[
+          { marginLeft: ".52in", marginBottom: ".1in", marginTop: ".07" },
+        ]}
+      >
+        <BoldText>* NOTE:</BoldText>
+        <Text>
+          Total Actual Charges should be based on Statement of Account (SOA)
         </Text>
       </Row>
     </Column>

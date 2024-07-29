@@ -3,12 +3,27 @@ import Row from "../layout/Row";
 import Column from "../layout/Column";
 import Heading1 from "../../typography/Heading1";
 import StackedLines from "../inputs/StackedLines";
-import { Text } from "@react-pdf/renderer";
-import CheckBoxInput from "../inputs/CheckBoxInput";
+import { StyleSheet, Text } from "@react-pdf/renderer";
 import { styles } from "../forms/ClaimForm2";
+import CheckBoxInput from "../../inputs/CheckBoxInput";
 
+const ComponentStyles = StyleSheet.create({
+  fieldLabel: {
+    marginBottom: ".06in",
+  },
+});
 // Patient Confinement Information 2 - 6 to 7
 export const PCI2 = () => {
+  const CHECKBOX_CONFIG = {
+    customHeight: ".17in",
+    customWidth: ".17in",
+    marginBottom: 0,
+    labelStyle: [
+      styles.bodyText,
+      styles.checkBoxLabel,
+      { marginLeft: ".05in" },
+    ],
+  };
   return (
     <>
       <Row
@@ -95,6 +110,7 @@ export const PCI2 = () => {
             <Column
               style={[
                 styles.bodyText,
+
                 {
                   marginRight: "0.09in",
                 },
@@ -117,8 +133,12 @@ export const PCI2 = () => {
                 },
               ]}
             >
-              <Text style={{}}>
-                Related Procedure/s (if there’s any) RVS Code
+              <Text
+                style={{
+                  alignSelf: "center",
+                }}
+              >
+                Related Procedure/s (if there’s any)
               </Text>
               <Row>
                 <Column
@@ -126,12 +146,12 @@ export const PCI2 = () => {
                     marginRight: "0.05in",
                   }}
                 >
-                  <Text>i.</Text>
-                  <Text>ii.</Text>
-                  <Text>iii.</Text>
-                  <Text>i.</Text>
-                  <Text>ii.</Text>
-                  <Text>iii.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>i.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>ii.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>iii.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>i.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>ii.</Text>
+                  <Text style={ComponentStyles.fieldLabel}>iii.</Text>
                 </Column>
                 <Column>
                   <StackedLines numLines={6} lineWidth="1.60in" />
@@ -187,32 +207,32 @@ export const PCI2 = () => {
                       marginRight: "0.10in",
                     }}
                   >
-                    <CheckBoxInput isSmall label="left" />
-                    <CheckBoxInput isSmall label="left" />
-                    <CheckBoxInput isSmall label="left" />
-                    <CheckBoxInput isSmall label="left" />
-                    <CheckBoxInput isSmall label="left" />
-                    <CheckBoxInput isSmall label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
                   </Column>
                   <Column
                     style={{
                       marginRight: "0.10in",
                     }}
                   >
-                    <CheckBoxInput isSmall label="right" />
-                    <CheckBoxInput isSmall label="right" />
-                    <CheckBoxInput isSmall label="right" />
-                    <CheckBoxInput isSmall label="right" />
-                    <CheckBoxInput isSmall label="right" />
-                    <CheckBoxInput isSmall label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="right" />
                   </Column>
                   <Column>
-                    <CheckBoxInput isSmall label="both" />
-                    <CheckBoxInput isSmall label="both" />
-                    <CheckBoxInput isSmall label="both" />
-                    <CheckBoxInput isSmall label="both" />
-                    <CheckBoxInput isSmall label="both" />
-                    <CheckBoxInput isSmall label="left" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="both" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="both" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="both" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="both" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="both" />
+                    <CheckBoxInput {...CHECKBOX_CONFIG} label="left" />
                   </Column>
                 </Row>
               </Column>
