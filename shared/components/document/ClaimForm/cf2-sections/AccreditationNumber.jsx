@@ -33,7 +33,7 @@ export const AccreditationNumber = () => {
     },
   });
   return (
-    <Row style={{ fontSize: "8.76px" }}>
+    <Row style={{ fontSize: "8.76px", paddingLeft: ".07in" }}>
       <Column style={{ width: "100%" }}>
         <Heading1>
           10.Accreditation Number/Name of Accredited Health Care

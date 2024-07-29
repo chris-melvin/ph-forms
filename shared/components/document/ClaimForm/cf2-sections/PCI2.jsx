@@ -29,7 +29,6 @@ export const PCI2 = () => {
       <Row
         style={{
           borderBottom: "1.5 #000 solid",
-          height: ".51in",
         }}
       >
         <Column
@@ -58,6 +57,7 @@ export const PCI2 = () => {
           <Row
             style={{
               alignItems: "center",
+              marginBottom: ".07in",
             }}
           >
             <Heading1
@@ -100,7 +100,7 @@ export const PCI2 = () => {
                     },
                   ]}
                 >
-                  <Text style={{ marginBottom: "0.25in" }}>a.</Text>
+                  <Text style={{ marginBottom: "0.40in" }}>a.</Text>
                   <Text>b.</Text>
                 </Column>
                 <Column>

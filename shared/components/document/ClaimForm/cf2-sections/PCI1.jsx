@@ -208,11 +208,11 @@ export const PCI1 = () => {
               <TimeInput
                 fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                 label={"d. Time Discharge"}
-                leftLabelStyle={[styles.bodyText, { marginRight: ".03in" }]}
+                leftLabelStyle={[styles.bodyText, { marginRight: ".01in" }]}
                 timeFieldContainerStyle={{ marginTop: ".07in" }}
                 style={{
                   paddingTop: 0,
-                  marginRight: "0.23in",
+                  marginRight: "0.22in",
                 }}
               />
               <CheckBoxInput

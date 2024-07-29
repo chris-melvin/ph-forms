@@ -32,7 +32,7 @@ function PhilHealthHeaderPart({ style }) {
       <BoldText
         fontFamily="Minion Pro"
         fontSize="12px"
-        style={{ letterSpacing: 0.5 }}
+        style={{ letterSpacing: 0.45 }}
       >
         PHILIPPINE HEALTH INSURANCE CORPORATION
       </BoldText>

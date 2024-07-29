@@ -435,7 +435,7 @@ export const PCI3 = () => {
           </Row>
         </Column>
       </Row>
-      <Row style={{ height: ".44in" }}>
+      <Row style={{ height: ".44in", paddingLeft: ".07in" }}>
         <Column>
           <Heading1>9. PhilHealth Benefits:</Heading1>
           <Row style={{ marginLeft: ".1in", marginTop: ".07in" }}>

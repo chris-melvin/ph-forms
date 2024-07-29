@@ -31,7 +31,7 @@ export const Part3B = () => {
     marginBottom: 0,
     labelStyle: [
       styles.bodyText,
-      { marginLeft: ".05in", fontWeight: "extralight", fontSize: "7px" },
+      { marginLeft: ".05in", fontWeight: "extralight", fontSize: "8px" },
     ],
   };
   return (
@@ -62,15 +62,10 @@ export const Part3B = () => {
           claim for reimbursement before PhilHealth
         </Text>
       </Column>
-      <Row
-        style={{ marginTop: ".2in", marginLeft: ".2in", marginBottom: ".1in" }}
-      >
+      <Row style={{ marginTop: ".2in", marginLeft: ".2in" }}>
         <Column style={{ width: "4.42in" }}>
           <FieldInput
-            labelStyle={[
-              styles.bodyText,
-              { fontSize: "7.5px", marginLeft: ".1in" },
-            ]}
+            labelStyle={[styles.bodyText, { fontSize: "8px" }]}
             label={
               "Signature Over Printed Name of Member/Patient/Authorized Representative"
             }
@@ -135,7 +130,7 @@ export const Part3B = () => {
                   />
                   <CheckBoxInput {...CHECKBOX_CONFIG} label={"Parent"} />
                 </Row>
-                <Row>
+                <Row style={{ marginBottom: ".04in" }}>
                   <CheckBoxInput
                     label={"Sibling"}
                     {...CHECKBOX_CONFIG}

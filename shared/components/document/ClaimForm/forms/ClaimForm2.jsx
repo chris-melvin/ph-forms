@@ -171,6 +171,7 @@ function CF2() {
                 marginRight: "0.18in",
                 alignItems: "center",
                 marginLeft: ".2in",
+                paddingTop: 5,
               }}
             />
             <FieldInput
@@ -180,6 +181,7 @@ function CF2() {
               style={{
                 marginRight: "0.18in",
                 alignItems: "center",
+                paddingTop: 5,
               }}
             />
 
@@ -195,6 +197,8 @@ function CF2() {
               }}
               outerHeight=".08in"
               dateLabel={["month", "day", "year"]}
+              dateFieldContainerStyle={{ marginTop: ".07in" }}
+              dashMarginTop={".05in"}
             />
           </Row>
         </Column>

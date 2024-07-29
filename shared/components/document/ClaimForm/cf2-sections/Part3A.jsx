@@ -413,11 +413,27 @@ export const Part3A = () => {
         >
           <CheckBoxInput
             {...CHECKBOX_CONFIG}
+            labelStyle={[
+              styles.bodyText,
+              {
+                marginLeft: ".05in",
+                fontWeight: "extralight",
+                fontSize: "8px",
+              },
+            ]}
             label="None"
             style={{ marginRight: ".3in" }}
           />
           <CheckBoxInput
             {...CHECKBOX_CONFIG}
+            labelStyle={[
+              styles.bodyText,
+              {
+                marginLeft: ".05in",
+                fontWeight: "extralight",
+                fontSize: "8px",
+              },
+            ]}
             style={{ marginRight: ".1in" }}
             label="Total Amount"
           />
@@ -441,11 +457,27 @@ export const Part3A = () => {
         >
           <CheckBoxInput
             {...CHECKBOX_CONFIG}
+            labelStyle={[
+              styles.bodyText,
+              {
+                marginLeft: ".05in",
+                fontWeight: "extralight",
+                fontSize: "8px",
+              },
+            ]}
             label="None"
             style={{ marginRight: ".3in" }}
           />
           <CheckBoxInput
             {...CHECKBOX_CONFIG}
+            labelStyle={[
+              styles.bodyText,
+              {
+                marginLeft: ".05in",
+                fontWeight: "extralight",
+                fontSize: "8px",
+              },
+            ]}
             style={{ marginRight: ".1in" }}
             label="Total Amount"
           />
