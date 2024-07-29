@@ -9,7 +9,7 @@ import CheckBoxInput from "../../inputs/CheckBoxInput";
 
 const ComponentStyles = StyleSheet.create({
   fieldLabel: {
-    marginBottom: ".06in",
+    marginBottom: ".04in",
   },
 });
 // Patient Confinement Information 2 - 6 to 7
@@ -45,13 +45,14 @@ export const PCI2 = () => {
       <Row
         style={{
           borderBottom: "1.5 #000 solid",
-          height: "1.56in",
+          height: "1.45in",
         }}
       >
         <Column
           style={{
             margin: "0.07in",
             marginTop: 0,
+            marginBottom: 0,
           }}
         >
           <Row

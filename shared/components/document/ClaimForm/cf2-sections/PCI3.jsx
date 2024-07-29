@@ -265,7 +265,7 @@ export const PCI3 = () => {
               </Row>
 
               {/* Field input width .81in, .97in, .76in, .93in, .81in */}
-              <Row>
+              <Row style={{ marginLeft: ".1in" }}>
                 <Heading1 style={[ComponentStyles.fieldInput]} fontSize={8.64}>
                   Day 0 ARV
                 </Heading1>
