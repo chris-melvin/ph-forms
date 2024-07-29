@@ -28,6 +28,8 @@ const SegmentedDate = ({
   leftLabelStyle = { fontFamily: "Arial Narrow" },
   fieldLabelStyle,
   dateLabel = ["Month", "Day", "Year"],
+  dateFieldContainerStyle,
+  dashMarginTop,
 }) => (
   <Row
     style={[
@@ -40,10 +42,13 @@ const SegmentedDate = ({
   >
     {label ? <Text style={leftLabelStyle}>{label}</Text> : <></>}
     <Column
-      style={{
-        marginLeft: dateMarginLeft,
-        marginRight: inputSpace,
-      }}
+      style={[
+        dateFieldContainerStyle,
+        {
+          marginLeft: dateMarginLeft,
+          marginRight: inputSpace,
+        },
+      ]}
     >
       <SegmentedLineInput
         number={2}
@@ -61,12 +66,15 @@ const SegmentedDate = ({
         {dateLabel[0]}
       </Text>
     </Column>
-    <Dash height={outerHeight} />
+    <Dash height={outerHeight} marginTop={dashMarginTop} />
     <Column
-      style={{
-        marginLeft: inputSpace,
-        marginRight: inputSpace,
-      }}
+      style={[
+        dateFieldContainerStyle,
+        {
+          marginLeft: inputSpace,
+          marginRight: inputSpace,
+        },
+      ]}
     >
       <SegmentedLineInput
         number={2}
@@ -84,12 +92,15 @@ const SegmentedDate = ({
         {dateLabel[1]}
       </Text>
     </Column>
-    <Dash height={outerHeight} />
+    <Dash height={outerHeight} marginTop={dashMarginTop} />
     <Column
-      style={{
-        marginLeft: inputSpace,
-        marginRight: inputSpace,
-      }}
+      style={[
+        dateFieldContainerStyle,
+        {
+          marginLeft: inputSpace,
+          marginRight: inputSpace,
+        },
+      ]}
     >
       <SegmentedLineInput
         number={4}

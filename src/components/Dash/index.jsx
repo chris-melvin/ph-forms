@@ -1,7 +1,7 @@
 import { Text, View } from "@react-pdf/renderer";
 import React from "react";
 
-function Dash({ width = ".08in", height = ".16in" }) {
+function Dash({ width = ".08in", height = ".16in", marginTop }) {
   return (
     <View
       style={{
@@ -9,6 +9,7 @@ function Dash({ width = ".08in", height = ".16in" }) {
         flexDirection: "column",
         justifyContent: "center",
         height: height,
+        marginTop: marginTop,
       }}
     >
       <View

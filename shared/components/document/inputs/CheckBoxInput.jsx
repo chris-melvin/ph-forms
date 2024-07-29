@@ -47,7 +47,7 @@ const CheckBoxInput = ({
   customWidth = ".16in",
   customHeight = ".18in",
   debug,
-  marginBottom = 3,
+  marginBottom = 2,
   labelStyle = {
     textAlign: "center",
     paddingTop: 2,

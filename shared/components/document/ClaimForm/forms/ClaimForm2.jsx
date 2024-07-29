@@ -77,7 +77,7 @@ export const styles = StyleSheet.create({
   bodyText: {
     fontSize: 8,
     fontFamily: "Source Sans",
-    fontWeight: "light",
+    fontWeight: "extralight",
   },
   alignItemsEnd: {
     alignItems: "flex-end",

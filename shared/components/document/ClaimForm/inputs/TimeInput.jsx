@@ -14,12 +14,15 @@ const styles = StyleSheet.create({
 
 const TimeInput = ({
   label,
+  leftLabelStyle,
   hourMarginLeft = ".10in",
   style,
   debug,
   boxWidth = ".17in",
   innerHeight = ".06in",
   outerHeight = ".06in",
+  fieldLabelStyle,
+  timeFieldContainerStyle,
 }) => (
   <Row
     style={[
@@ -31,43 +34,44 @@ const TimeInput = ({
     debug={debug}
   >
     {label ? (
-      <Text style={{ fontFamily: "Source Sans", fontWeight: "light" }}>
+      <Text
+        style={[
+          leftLabelStyle,
+          { fontFamily: "Source Sans", fontWeight: "light" },
+        ]}
+      >
         {label}
       </Text>
     ) : (
       <></>
     )}
-    <Column
-      style={{
-        marginLeft: hourMarginLeft,
-      }}
-    >
+    <Column style={[timeFieldContainerStyle, { marginLeft: hourMarginLeft }]}>
       <SegmentedLineInput
         number={2}
         width={boxWidth}
         innerHeight={innerHeight}
         outerHeight={outerHeight}
       />
-      <Text style={styles.label}>hour</Text>
+      <Text style={[styles.label, fieldLabelStyle]}>hour</Text>
     </Column>
     <Text
       style={{
-        fontSize: 12,
+        fontSize: 7,
         marginHorizontal: 2,
-        bottom: 2,
+        bottom: -1,
         textAlign: "center",
       }}
     >
       :
     </Text>
-    <Column>
+    <Column style={timeFieldContainerStyle}>
       <SegmentedLineInput
         number={2}
         width={boxWidth}
         innerHeight={innerHeight}
         outerHeight={outerHeight}
       />
-      <Text style={styles.label}>min</Text>
+      <Text style={[styles.label, fieldLabelStyle]}>min</Text>
     </Column>
   </Row>
 );

@@ -1,5 +1,5 @@
-import { Text } from '@react-pdf/renderer';
-import React from 'react';
+import { Text } from "@react-pdf/renderer";
+import React from "react";
 
 function Heading1({ children, style, fontSize = 10 }) {
   return (
@@ -9,7 +9,7 @@ function Heading1({ children, style, fontSize = 10 }) {
           fontSize: fontSize,
           fontFamily: "Source Sans",
           fontWeight: "bold",
-          letterSpacing: '0',
+          letterSpacing: "0",
         },
         style,
       ]}

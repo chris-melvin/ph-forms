@@ -37,7 +37,10 @@ export const PCI1 = () => {
       <Column
         style={{
           margin: "0.07in",
+          marginLeft: "0",
           padding: "0.05in",
+          marginBottom: 0,
+          paddingBottom: 0,
         }}
       >
         <Row>
@@ -114,12 +117,14 @@ export const PCI1 = () => {
             style={[ComponentStyles.textFields, { marginRight: "0.18in" }]}
             labelStyle={styles.bodyText}
           />
-          <AddressInput
-            style={ComponentStyles.textFields}
-            labelStyle={styles.bodyText}
-          />
+          <Row style={{ marginRight: ".1in" }}>
+            <AddressInput
+              style={ComponentStyles.textFields}
+              labelStyle={[styles.bodyText]}
+            />
+          </Row>
         </Row>
-        <Row style={[ComponentStyles.rowStyles]}>
+        <Row style={[]}>
           <Heading1
             style={{
               marginRight: "0.23in",
@@ -130,17 +135,27 @@ export const PCI1 = () => {
           <Column>
             <Row style={[styles.alignItemsEnd]}>
               <SegmentedDate
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                 label={"a. Date Admitted"}
+                leftLabelStyle={[styles.bodyText, { marginRight: "0.02in" }]}
                 innerHeight={INPUT_CONSTANTS.innerHeight}
                 outerHeight={INPUT_CONSTANTS.outerHeight}
+                dateLabel={["month", "day", "year"]}
                 boxWidth={INPUT_CONSTANTS.width}
-                style={{
-                  paddingTop: 0,
-                  marginRight: "0.23in",
-                }}
+                dateFieldContainerStyle={{ marginTop: ".07in" }}
+                dashMarginTop={".05in"}
+                style={[
+                  {
+                    paddingTop: 0,
+                    marginRight: "0.20in",
+                  },
+                ]}
               />
               <TimeInput
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                 label={"b. Time Admitted"}
+                leftLabelStyle={[styles.bodyText, { marginRight: ".03in" }]}
+                timeFieldContainerStyle={{ marginTop: ".07in" }}
                 style={{
                   paddingTop: 0,
                   marginRight: "0.23in",
@@ -150,7 +165,11 @@ export const PCI1 = () => {
               <CheckBoxInput
                 customHeight=".17in"
                 customWidth=".17in"
-                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
                 label={"AM"}
                 style={{
                   marginRight: "0.18in",
@@ -159,7 +178,11 @@ export const PCI1 = () => {
               <CheckBoxInput
                 customHeight=".17in"
                 customWidth=".17in"
-                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
                 label={"PM"}
                 style={{
                   marginRight: "0.24in",
@@ -168,17 +191,25 @@ export const PCI1 = () => {
             </Row>
             <Row style={[styles.alignItemsEnd]}>
               <SegmentedDate
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                 label={"c. Date Discharge"}
+                leftLabelStyle={styles.bodyText}
                 innerHeight={INPUT_CONSTANTS.innerHeight}
                 outerHeight={INPUT_CONSTANTS.outerHeight}
                 boxWidth={INPUT_CONSTANTS.width}
+                dateLabel={["month", "day", "year"]}
+                dateFieldContainerStyle={{ marginTop: ".07in" }}
+                dashMarginTop={".05in"}
                 style={{
                   paddingTop: 0,
                   marginRight: "0.20in",
                 }}
               />
               <TimeInput
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
                 label={"d. Time Discharge"}
+                leftLabelStyle={[styles.bodyText, { marginRight: ".03in" }]}
+                timeFieldContainerStyle={{ marginTop: ".07in" }}
                 style={{
                   paddingTop: 0,
                   marginRight: "0.23in",
@@ -187,7 +218,11 @@ export const PCI1 = () => {
               <CheckBoxInput
                 customHeight=".17in"
                 customWidth=".17in"
-                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
                 label={"AM"}
                 style={{
                   marginRight: "0.18in",
@@ -196,7 +231,11 @@ export const PCI1 = () => {
               <CheckBoxInput
                 customHeight=".17in"
                 customWidth=".17in"
-                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
                 label={"PM"}
                 style={{
                   marginRight: "0.24in",
@@ -205,131 +244,168 @@ export const PCI1 = () => {
             </Row>
           </Column>
         </Row>
-        <Row style={ComponentStyles.rowStyles}>
+        <Row style={[ComponentStyles.rowStyles, { alignItems: "flex-end" }]}>
           <Heading1>4. Patient Disposition: </Heading1>
-          <Text>(select only 1)</Text>
+          <Text style={[styles.bodyText]}>(select only 1)</Text>
         </Row>
-        <Column
-          style={{
-            marginLeft: "0.13in",
-          }}
-        >
-          <Row style={[styles.alignItemsEnd]}>
+        <Row style={{ position: "relative" }}>
+          <Column style={{ marginLeft: ".13in" }}>
             <CheckBoxInput
               label={"a. Improved"}
               customHeight=".17in"
               customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+              labelStyle={[
+                styles.bodyText,
+                styles.checkBoxLabel,
+                { marginLeft: ".22in" },
+              ]}
               style={{
                 marginRight: "1.28in",
               }}
             />
             <CheckBoxInput
-              label={"e. Expired"}
               customHeight=".17in"
               customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
-              style={{
-                marginRight: "0.19in",
-              }}
-            />
-            <SegmentedDate
-              style={{
-                paddingTop: 0,
-                marginRight: "0.20in",
-              }}
-              innerHeight={INPUT_CONSTANTS.innerHeight}
-              outerHeight={INPUT_CONSTANTS.outerHeight}
-              boxWidth={INPUT_CONSTANTS.width}
-            />
-            <TimeInput
-              label={"Time: "}
-              style={{
-                paddingTop: 0,
-                marginRight: "0.24in",
-              }}
-            />
-            <CheckBoxInput
-              customHeight=".17in"
-              customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
-              label={"AM"}
-              style={{
-                marginRight: "0.18in",
-              }}
-            />
-            <CheckBoxInput
-              customHeight=".17in"
-              customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
-              label={"PM"}
-              style={{
-                marginRight: "0.24in",
-              }}
-            />
-          </Row>
-          <Row>
-            <CheckBoxInput
-              customHeight=".17in"
-              customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+              labelStyle={[
+                styles.bodyText,
+                styles.checkBoxLabel,
+                { marginLeft: ".22in" },
+              ]}
               label={"b. Recovered"}
               style={{
                 marginRight: "1.20in",
               }}
             />
             <CheckBoxInput
-              label={"f. Transferred/Referred"}
-              customHeight=".17in"
-              customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
-              style={{
-                marginRight: "0.08in",
-              }}
-            />
-            <FieldInput
-              width="4.0in"
-              label="Name of Referral Health Care Institution
-"
-              style={[ComponentStyles.textFields]}
-              labelStyle={styles.bodyText}
-            />
-          </Row>
-          <Row>
-            <CheckBoxInput
               label={"c. Home/Discharged Against Medical Advise"}
               customHeight=".17in"
               customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+              labelStyle={[
+                styles.bodyText,
+                styles.checkBoxLabel,
+                { marginLeft: ".22in" },
+              ]}
               style={{
                 marginRight: "0.90in",
               }}
             />
-            <AddressInput
-              style={ComponentStyles.textFields}
-              labelStyle={styles.bodyText}
-            />
-          </Row>
-          <Row>
             <CheckBoxInput
               label={"d. Absconded"}
               customHeight=".17in"
               customWidth=".17in"
-              labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+              labelStyle={[
+                styles.bodyText,
+                styles.checkBoxLabel,
+                { marginLeft: ".22in" },
+              ]}
               style={{
                 marginRight: "1.67in",
               }}
             />
-            <Text style={[styles.bodyText, { marginRight: "0.18in" }]}>
-              Reason/s for referral/transfer:
-            </Text>
-            <FieldInput width="3.63in" />
-          </Row>
-        </Column>
+          </Column>
+          <Column
+            style={{
+              left: "-.45in",
+
+              marginLeft: "0.13in",
+            }}
+          >
+            <Row style={[styles.alignItemsEnd, { width: "5.51in" }]}>
+              <CheckBoxInput
+                label={"e. Expired"}
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                style={{
+                  marginRight: "0.19in",
+                }}
+              />
+              <SegmentedDate
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
+                leftLabelStyle={styles.bodyText}
+                innerHeight={INPUT_CONSTANTS.innerHeight}
+                outerHeight={INPUT_CONSTANTS.outerHeight}
+                boxWidth={INPUT_CONSTANTS.width}
+                dateLabel={["month", "day", "year"]}
+                dateFieldContainerStyle={{ marginTop: ".07in" }}
+                dashMarginTop={".05in"}
+                style={{
+                  paddingTop: 0,
+                  marginRight: "0.20in",
+                }}
+              />
+              <TimeInput
+                label={"Time: "}
+                leftLabelStyle={[styles.bodyText]}
+                fieldLabelStyle={[styles.bodyText, { fontSize: "7px" }]}
+                timeFieldContainerStyle={{ marginTop: ".07in" }}
+                style={{
+                  paddingTop: 0,
+                  marginRight: "0.24in",
+                }}
+              />
+              <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
+                label={"AM"}
+                style={{
+                  marginRight: "0.1in",
+                }}
+              />
+              <CheckBoxInput
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[
+                  styles.bodyText,
+                  styles.checkBoxLabel,
+                  { marginLeft: ".06in", paddingTop: 1 },
+                ]}
+                label={"PM"}
+                style={{
+                  marginRight: "0.24in",
+                }}
+              />
+            </Row>
+            <Row style={[{ width: "5.51in" }]}>
+              <CheckBoxInput
+                label={"f. Transferred/Referred"}
+                customHeight=".17in"
+                customWidth=".17in"
+                labelStyle={[styles.bodyText, styles.checkBoxLabel]}
+                style={{
+                  marginRight: "0.08in",
+                }}
+              />
+              <FieldInput
+                width="4.0in"
+                label="Name of Referral Health Care Institution"
+                style={[ComponentStyles.textFields]}
+                labelStyle={[styles.bodyText, { fontSize: 7 }]}
+              />
+            </Row>
+            <Row style={[{ width: "5.51in", marginLeft: "1in" }]}>
+              <AddressInput
+                style={ComponentStyles.textFields}
+                labelStyle={[styles.bodyText, { fontSize: "7px" }]}
+              />
+            </Row>
+            <Row style={[{ width: "5.51in", marginLeft: ".5in" }]}>
+              <Text style={[styles.bodyText, { marginRight: "0.08in" }]}>
+                Reason/s for referral/transfer:
+              </Text>
+              <FieldInput width="3.63in" />
+            </Row>
+          </Column>
+        </Row>
         <Row>
           <Heading1
             style={{
-              marginRight: "0.20in",
+              marginRight: "0.16in",
             }}
           >
             5. Type of Accomodation:
@@ -340,16 +416,14 @@ export const PCI1 = () => {
             customWidth=".17in"
             labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             style={{
-              marginRight: "0.18in",
+              marginRight: "0.15in",
             }}
-            boxMarginRight="0.13in"
           />
           <CheckBoxInput
             customHeight=".17in"
             customWidth=".17in"
             labelStyle={[styles.bodyText, styles.checkBoxLabel]}
             label="Non-Private (Charity/Service)"
-            boxMarginRight="0.13in"
           />
         </Row>
       </Column>
